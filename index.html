@@ -1,0 +1,989 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Finridge — Unlock Your Financial Potential</title>
+<meta name="description" content="Finridge Commercial Brokers — credit card and personal finance solutions in the UAE through trusted Islamic and conventional banking partners.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+<script type="importmap">
+{ "imports": {
+  "three": "https://unpkg.com/three@0.143.0/build/three.module.js",
+  "three/examples/jsm/": "https://unpkg.com/three@0.143.0/examples/jsm/"
+}}
+</script>
+<style>
+:root{
+  --bg:#04060f; --bg-2:#060a18; --ink:#f3f6ff; --muted:#9aa6c4; --muted-2:#6b7796;
+  --line:rgba(150,175,230,.12); --line-strong:rgba(150,175,230,.22);
+  --accent:#5df0a8; --accent-2:#2fd38a; --accent-ink:#032018;
+  --glass:rgba(12,18,38,.55); --glass-2:rgba(16,24,48,.65);
+  --radius:18px; --radius-lg:26px; --maxw:1180px;
+  --shadow:0 30px 80px -30px rgba(0,0,0,.75);
+  --font:'Inter',-apple-system,BlinkMacSystemFont,system-ui,sans-serif;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:var(--font);color:var(--ink);background:var(--bg);-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility;overflow-x:hidden}
+a{color:inherit;text-decoration:none}
+/* Lenis */
+html.lenis,html.lenis body{height:auto}
+.lenis.lenis-smooth{scroll-behavior:auto !important}
+.lenis.lenis-smooth [data-lenis-prevent]{overscroll-behavior:contain}
+.lenis.lenis-stopped{overflow:hidden}
+/* staggered scroll-reveal */
+[data-reveal]{opacity:0;transform:translateY(26px);transition:opacity .7s cubic-bezier(.22,.7,.2,1),transform .7s cubic-bezier(.22,.7,.2,1);transition-delay:var(--rd,0ms);will-change:opacity,transform}
+[data-reveal].in{opacity:1;transform:none}
+/* fixed WebGL planet behind everything, never grabs pointer/scroll */
+.planet-canvas{position:fixed;inset:0;width:100vw;height:100vh;display:block;z-index:0;pointer-events:none}
+.page{position:relative;z-index:1}
+.section{position:relative;z-index:1;max-width:var(--maxw);margin:0 auto;padding:clamp(80px,12vw,160px) 24px}
+.eyebrow{display:inline-block;font-size:12px;font-weight:600;letter-spacing:.18em;text-transform:uppercase;color:var(--accent);margin-bottom:18px}
+.section-head{max-width:680px;margin:0 auto clamp(48px,6vw,80px);text-align:center}
+.section-head h2,.showcase-copy h2,.cta-card h2{font-size:clamp(30px,4.4vw,50px);font-weight:800;line-height:1.05;letter-spacing:-.02em;text-shadow:0 2px 40px rgba(0,0,0,.6)}
+.section-head p{margin-top:18px;color:var(--muted);font-size:18px;line-height:1.65;text-shadow:0 1px 24px rgba(0,0,0,.55)}
+/* buttons */
+.btn{display:inline-flex;align-items:center;gap:9px;font-size:15px;font-weight:600;padding:13px 22px;border-radius:999px;border:1px solid transparent;cursor:pointer;transition:transform .18s ease,box-shadow .25s ease,background .2s ease,border-color .2s ease;white-space:nowrap}
+.btn svg{width:17px;height:17px}
+.btn-primary{color:var(--accent-ink);background:linear-gradient(180deg,var(--accent),var(--accent-2));box-shadow:0 10px 30px -8px rgba(93,240,168,.55),inset 0 1px 0 rgba(255,255,255,.4)}
+.btn-primary:hover{transform:translateY(-2px);box-shadow:0 16px 38px -8px rgba(93,240,168,.7)}
+.btn-outline{color:var(--ink);background:rgba(255,255,255,.04);border-color:var(--line-strong);backdrop-filter:blur(10px)}
+.btn-outline:hover{background:rgba(255,255,255,.09);transform:translateY(-2px)}
+.btn-ghost{color:var(--ink);background:rgba(255,255,255,.05);border-color:var(--line-strong);padding:9px 18px}
+.btn-ghost:hover{background:rgba(255,255,255,.1)}
+
+svg.ic{fill:none;stroke:currentColor;stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round}
+svg.ic.arrow{stroke-width:2}
+
+/* ---------- HERO ---------- */
+.hero{position:relative;min-height:100vh;display:flex;flex-direction:column;
+  background:radial-gradient(125% 62% at 50% -10%, rgba(4,6,15,.82) 0%, rgba(4,6,15,.28) 44%, transparent 68%)}
+.nav{width:100%;max-width:var(--maxw);margin:0 auto;padding:22px 24px;display:flex;align-items:center;justify-content:space-between;gap:24px}
+.brand{display:inline-flex;align-items:center;gap:9px;font-weight:800;font-size:19px;letter-spacing:.16em}
+.brand-mark{color:var(--accent);font-size:14px;transform:translateY(-1px)}
+.nav-links{display:flex;gap:30px;font-size:14.5px;color:var(--muted)}
+.nav-links a{transition:color .2s ease}
+.nav-links a:hover{color:var(--ink)}
+.hero-inner{flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:0 24px;transform:translateY(-10vh)}
+.hero-title{font-size:clamp(34px,5.2vw,62px);font-weight:800;line-height:1.04;letter-spacing:-.03em;max-width:15ch;text-shadow:0 2px 50px rgba(0,0,0,.55)}
+.hero-title em{font-style:normal;background:linear-gradient(180deg,var(--accent),var(--accent-2));-webkit-background-clip:text;background-clip:text;color:transparent;-webkit-text-fill-color:transparent;text-shadow:none}
+.hero-sub{margin-top:24px;max-width:560px;font-size:clamp(16px,2vw,19px);line-height:1.6;color:var(--muted);text-shadow:0 1px 24px rgba(0,0,0,.55)}
+.hero-actions{margin-top:38px;display:flex;gap:14px;justify-content:center;flex-wrap:wrap}
+.logos{text-align:center;padding:0 24px clamp(36px,6vw,64px)}
+.logos-label{font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:var(--muted-2)}
+.logos-row{margin-top:20px;display:flex;flex-wrap:wrap;justify-content:center;align-items:center;gap:clamp(24px,5vw,56px)}
+.logo{font-size:17px;font-weight:700;letter-spacing:-.01em;color:var(--muted-2);opacity:.8;transition:color .2s ease,opacity .2s ease;cursor:default}
+.logo:hover{color:var(--ink);opacity:1}
+
+/* ---------- FEATURES ---------- */
+.feature-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.card{position:relative;overflow:hidden;padding:30px;border-radius:var(--radius);background:var(--glass);border:1px solid var(--line);
+  -webkit-backdrop-filter:blur(14px);backdrop-filter:blur(14px);
+  transition:opacity .7s cubic-bezier(.22,.7,.2,1),transform .7s cubic-bezier(.22,.7,.2,1),border-color .25s ease,background .25s ease;transition-delay:var(--rd,0ms),var(--rd,0ms),0ms,0ms}
+.card::before{content:"";position:absolute;inset:0;border-radius:inherit;background:radial-gradient(120% 120% at 0% 0%, rgba(93,240,168,.08), transparent 45%);opacity:0;transition:opacity .3s ease;pointer-events:none}
+.card.in:hover{transform:translateY(-4px);border-color:var(--line-strong);background:var(--glass-2);transition-delay:0ms;transition-duration:.25s}
+.card:hover::before{opacity:1}
+.card-icon{position:relative;width:46px;height:46px;border-radius:12px;display:grid;place-items:center;color:var(--accent);background:rgba(93,240,168,.1);border:1px solid rgba(93,240,168,.18);margin-bottom:20px}
+.card-icon svg{width:22px;height:22px}
+.card h3{position:relative;font-size:19px;font-weight:700;letter-spacing:-.01em;margin-bottom:10px}
+.card p{position:relative;font-size:15px;line-height:1.6;color:var(--muted)}
+
+/* ---------- SHOWCASE ---------- */
+.showcase-grid{display:grid;grid-template-columns:1fr 1.05fr;gap:clamp(36px,6vw,72px);align-items:center}
+.showcase-copy p{margin:18px 0 30px;color:var(--muted);font-size:18px;line-height:1.65;text-shadow:0 1px 24px rgba(0,0,0,.55)}
+.dashboard{position:relative;padding:24px;border-radius:var(--radius-lg);background:var(--glass-2);border:1px solid var(--line-strong);box-shadow:var(--shadow);-webkit-backdrop-filter:blur(18px);backdrop-filter:blur(18px)}
+.dashboard::after{content:"";position:absolute;inset:-1px;border-radius:inherit;padding:1px;background:linear-gradient(160deg, rgba(93,240,168,.35), transparent 40%);
+  -webkit-mask:linear-gradient(#000 0 0) content-box,linear-gradient(#000 0 0);-webkit-mask-composite:xor;
+  mask:linear-gradient(#000 0 0) content-box exclude,linear-gradient(#000 0 0);pointer-events:none}
+.dash-top{display:flex;align-items:center;justify-content:space-between;margin-bottom:18px}
+.dash-title{font-size:15px;font-weight:600}
+.dash-live{display:inline-flex;align-items:center;gap:7px;font-size:12.5px;font-weight:600;color:var(--accent)}
+.dash-live i{width:7px;height:7px;border-radius:50%;background:var(--accent);box-shadow:0 0 10px var(--accent);animation:pulse 1.8s ease-in-out infinite}
+@keyframes pulse{50%{opacity:.35}}
+.dash-bars{display:flex;align-items:flex-end;gap:10px;height:150px;padding:14px;background:rgba(0,0,0,.25);border:1px solid var(--line);border-radius:14px}
+.dash-bar{flex:1;height:var(--h);background:linear-gradient(180deg,var(--accent),rgba(47,211,138,.25));border-radius:6px 6px 3px 3px;transform-origin:bottom}
+.dashboard.in .dash-bar{animation:grow .9s cubic-bezier(.22,.7,.2,1) both;animation-delay:calc(var(--i) * 90ms)}
+@keyframes grow{from{transform:scaleY(0)}to{transform:scaleY(1)}}
+.dash-rows{margin-top:20px;display:grid;gap:13px}
+.dash-row{display:grid;grid-template-columns:120px 1fr;gap:14px;align-items:center;font-size:13.5px;color:var(--muted)}
+.dash-track{height:8px;border-radius:999px;background:rgba(255,255,255,.06);overflow:hidden}
+.dash-fill{height:100%;width:var(--w);border-radius:999px;background:linear-gradient(90deg,var(--accent-2),var(--accent))}
+.dashboard.in .dash-fill{animation:fill 1.1s cubic-bezier(.22,.7,.2,1) .3s both}
+@keyframes fill{from{width:0}to{width:var(--w)}}
+.stats{margin-top:clamp(56px,8vw,96px);display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
+.stat{text-align:center;padding:30px 18px;border-radius:var(--radius);background:var(--glass);border:1px solid var(--line);-webkit-backdrop-filter:blur(12px);backdrop-filter:blur(12px)}
+.stat-value{font-size:clamp(30px,4vw,44px);font-weight:800;letter-spacing:-.02em;line-height:1.1;background:linear-gradient(180deg,#fff,var(--accent));-webkit-background-clip:text;background-clip:text;color:transparent;-webkit-text-fill-color:transparent}
+.stat-label{margin-top:8px;font-size:14px;color:var(--muted)}
+
+/* ---------- CTA + FOOTER ---------- */
+.cta-card{text-align:center;max-width:760px;margin:0 auto;padding:clamp(48px,7vw,80px) clamp(28px,5vw,64px);border-radius:var(--radius-lg);
+  background:radial-gradient(120% 140% at 50% 0%, rgba(93,240,168,.12), transparent 55%), var(--glass-2);
+  border:1px solid var(--line-strong);box-shadow:var(--shadow);-webkit-backdrop-filter:blur(18px);backdrop-filter:blur(18px)}
+.cta-card p{margin:18px auto 34px;max-width:520px;color:var(--muted);font-size:18px;line-height:1.65}
+.cta-card .hero-actions{margin-top:0}
+.cta-card p a{color:var(--ink);border-bottom:1px solid var(--line-strong)}
+.dash-mission{font-size:14.5px;line-height:1.65;color:var(--muted);margin-bottom:18px}
+.dashboard .dash-bars{height:96px}
+.footer{display:flex;justify-content:space-between;gap:48px;flex-wrap:wrap;margin-top:clamp(64px,9vw,110px);padding-top:48px;border-top:1px solid var(--line)}
+.footer-brand{max-width:300px}
+.footer-brand p{margin-top:14px;font-size:14.5px;line-height:1.6;color:var(--muted)}
+.footer-cols{display:flex;gap:clamp(36px,6vw,72px);flex-wrap:wrap}
+.footer-col h4{font-size:12px;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:var(--muted-2);margin-bottom:16px}
+.footer-col a{display:block;font-size:14.5px;color:var(--muted);margin-bottom:11px;transition:color .2s ease}
+.footer-col a:hover{color:var(--ink)}
+.copyright{text-align:center;margin-top:56px;font-size:13px;color:var(--muted-2)}
+
+/* ---------- RESPONSIVE ---------- */
+@media (max-width:980px){
+  .feature-grid{grid-template-columns:repeat(2,1fr)}
+  .showcase-grid{grid-template-columns:1fr}
+  .showcase-copy{text-align:center}
+  .stats{grid-template-columns:repeat(2,1fr)}
+}
+@media (max-width:720px){
+  .nav-links{display:none}
+  .nav{padding:18px 20px}
+  .section{padding:clamp(64px,16vw,110px) 20px}
+}
+@media (max-width:560px){
+  .feature-grid{grid-template-columns:1fr}
+  .dash-row{grid-template-columns:90px 1fr}
+  .hero-actions .btn{flex:1;justify-content:center}
+  .cta-card{padding:40px 22px}
+  .footer{flex-direction:column}
+}
+@media (max-width:380px){
+  .stats{grid-template-columns:1fr}
+  .logo{font-size:15px}
+  .logos-row{gap:18px}
+}
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  [data-reveal]{opacity:1;transform:none;transition:none}
+  .dash-bar,.dash-fill,.dash-live i{animation:none !important}
+}
+</style>
+</head>
+<body>
+<canvas class="planet-canvas" aria-hidden="true"></canvas>
+
+<div class="page" id="top">
+
+  <!-- SECTION 1 · HERO -->
+  <header class="hero">
+    <nav class="nav">
+      <a class="brand" href="#top"><span class="brand-mark">▲</span>Finridge</a>
+      <div class="nav-links">
+        <a href="#services">Services</a>
+        <a href="#about">About</a>
+        <a href="https://finridge.net/index.php/car/" target="_blank" rel="noopener">Career</a>
+        <a href="#contact">Contact Us</a>
+      </div>
+      <a class="btn btn-ghost" href="#contact">Get A Quote</a>
+    </nav>
+    <div class="hero-inner">
+      <h1 class="hero-title" data-reveal style="--rd:60ms">Unlock Your<br>Financial <em>Potential</em></h1>
+      <p class="hero-sub" data-reveal style="--rd:180ms">Through our comprehensive credit card and loan services, empowering you to seize opportunities, conquer challenges, and pave the way towards your dreams.</p>
+      <div class="hero-actions" data-reveal style="--rd:300ms">
+        <a class="btn btn-primary" href="https://finridge.net/index.php/contact-us/" target="_blank" rel="noopener">Apply Now
+          <svg class="ic arrow" viewBox="0 0 24 24"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></a>
+        <a class="btn btn-outline" href="#services">Our Services</a>
+      </div>
+    </div>
+    <div class="logos" data-reveal style="--rd:420ms">
+      <div class="logos-label">Our trusted partners</div>
+      <div class="logos-row">
+        <span class="logo">Sharjah Islamic Bank</span><span class="logo">Dubai Islamic Bank</span><span class="logo">Emirates Islamic</span>
+      </div>
+    </div>
+  </header>
+
+  <!-- SECTION 2 · SERVICES -->
+  <section class="section features" id="services">
+    <div class="section-head">
+      <span class="eyebrow" data-reveal>We offer</span>
+      <h2 data-reveal style="--rd:80ms">Financial solutions, made simple</h2>
+      <p data-reveal style="--rd:160ms">At Finridge, we simplify access to financial solutions through trusted partnerships with leading banks — transparent, efficient, and tailored services that empower you to make confident financial decisions.</p>
+    </div>
+    <div class="feature-grid">
+      <article class="card" data-reveal style="--rd:0ms">
+        <div class="card-icon"><svg class="ic" viewBox="0 0 24 24"><rect x="2" y="5" width="20" height="14" rx="2.5"/><path d="M2 10h20"/><path d="M6 15h4"/></svg></div>
+        <h3>Credit cards</h3>
+        <p>A reliable, efficient payment solution that lets individuals and businesses pay conveniently and securely, wherever cards are accepted.</p>
+      </article>
+      <article class="card" data-reveal style="--rd:90ms">
+        <div class="card-icon"><svg class="ic" viewBox="0 0 24 24"><path d="M4 19V5"/><path d="M4 19h16"/><path d="M8 16v-4"/><path d="M13 16V8"/><path d="M18 16v-7"/></svg></div>
+        <h3>Personal finance</h3>
+        <p>Personal loans matched to your income and goals, arranged through our partner banks across the UAE.</p>
+      </article>
+      <article class="card" data-reveal style="--rd:180ms">
+        <div class="card-icon"><svg class="ic" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M2 12h20"/><path d="M12 2a15 15 0 0 1 0 20 15 15 0 0 1 0-20Z"/></svg></div>
+        <h3>Islamic &amp; conventional</h3>
+        <p>A distributor and partner for both Conventional and Islamic banks and financial institutions throughout the UAE.</p>
+      </article>
+      <article class="card" data-reveal style="--rd:270ms">
+        <div class="card-icon"><svg class="ic" viewBox="0 0 24 24"><rect x="3" y="3" width="6" height="6" rx="1.5"/><rect x="15" y="15" width="6" height="6" rx="1.5"/><path d="M6 9v3a3 3 0 0 0 3 3h3"/></svg></div>
+        <h3>Tailored solutions</h3>
+        <p>Bespoke financial solutions that cater to your individual needs, from personal finance to business funding.</p>
+      </article>
+      <article class="card" data-reveal style="--rd:360ms">
+        <div class="card-icon"><svg class="ic" viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10Z"/><path d="m9 12 2 2 4-4"/></svg></div>
+        <h3>Trusted &amp; transparent</h3>
+        <p>Professionalism, integrity, and exceptional service — a dependable banking partner you can rely on.</p>
+      </article>
+      <article class="card" data-reveal style="--rd:450ms">
+        <div class="card-icon"><svg class="ic" viewBox="0 0 24 24"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></div>
+        <h3>Lasting relationships</h3>
+        <p>We are committed to building long-lasting relationships with our clients and providing the highest level of service possible.</p>
+      </article>
+    </div>
+  </section>
+
+  <!-- SECTION 3 · ABOUT + FACTS -->
+  <section class="section showcase" id="about">
+    <div class="showcase-grid">
+      <div class="showcase-copy">
+        <span class="eyebrow" data-reveal>About us</span>
+        <h2 data-reveal style="--rd:90ms">A trusted financial brokerage in the UAE</h2>
+        <p data-reveal style="--rd:180ms">Finridge Commercial Brokers is dedicated to connecting individuals and businesses with tailored banking and financial solutions through professionalism, integrity, and exceptional service.</p>
+        <div data-reveal style="--rd:270ms">
+          <a class="btn btn-primary" href="#contact">Get in touch with us
+            <svg class="ic arrow" viewBox="0 0 24 24"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></a>
+        </div>
+      </div>
+      <div class="dashboard" data-reveal style="--rd:160ms">
+        <div class="dash-top">
+          <span class="dash-title">Our mission</span>
+          <span class="dash-live"><i></i>Finridge</span>
+        </div>
+        <p class="dash-mission">Leading distributor and partner for Conventional and Islamic banks, providing exceptional services, fostering strong relationships, and driving growth through excellence and innovation.</p>
+        <div class="dash-bars" aria-hidden="true">
+          <span class="dash-bar" style="--h:62%;--i:0"></span>
+          <span class="dash-bar" style="--h:88%;--i:1"></span>
+          <span class="dash-bar" style="--h:47%;--i:2"></span>
+          <span class="dash-bar" style="--h:95%;--i:3"></span>
+          <span class="dash-bar" style="--h:71%;--i:4"></span>
+          <span class="dash-bar" style="--h:80%;--i:5"></span>
+          <span class="dash-bar" style="--h:58%;--i:6"></span>
+        </div>
+        <div class="dash-rows">
+          <div class="dash-row"><span>1 · Enquire</span><div class="dash-track"><div class="dash-fill" style="--w:25%"></div></div></div>
+          <div class="dash-row"><span>2 · Share details</span><div class="dash-track"><div class="dash-fill" style="--w:50%"></div></div></div>
+          <div class="dash-row"><span>3 · Bank match</span><div class="dash-track"><div class="dash-fill" style="--w:75%"></div></div></div>
+          <div class="dash-row"><span>4 · Apply</span><div class="dash-track"><div class="dash-fill" style="--w:100%"></div></div></div>
+        </div>
+      </div>
+    </div>
+    <div class="stats">
+      <div class="stat" data-reveal style="--rd:0ms"><div class="stat-value">Cards</div><div class="stat-label">Credit card services</div></div>
+      <div class="stat" data-reveal style="--rd:80ms"><div class="stat-value">Loans</div><div class="stat-label">Personal finance</div></div>
+      <div class="stat" data-reveal style="--rd:160ms"><div class="stat-value">Both</div><div class="stat-label">Islamic &amp; conventional banks</div></div>
+      <div class="stat" data-reveal style="--rd:240ms"><div class="stat-value">Dubai</div><div class="stat-label">UAE head office</div></div>
+    </div>
+  </section>
+
+  <!-- SECTION 4 · CONTACT + FOOTER -->
+  <section class="section cta" id="contact">
+    <div class="cta-card">
+      <span class="eyebrow" data-reveal style="--rd:60ms">Contact us</span>
+      <h2 data-reveal style="--rd:140ms">Connect with us for further details</h2>
+      <p data-reveal style="--rd:220ms">Office 310, Business Venue Building, Umm Hurair Road, Oud Metha, Dubai, UAE · P.O Box 45592<br><a href="mailto:info@finridge.net">info@finridge.net</a> · <a href="tel:+97147034555">+971 4703 4555</a></p>
+      <div class="hero-actions" data-reveal style="--rd:300ms">
+        <a class="btn btn-primary" href="https://finridge.net/index.php/contact-us/" target="_blank" rel="noopener">Get A Quote
+          <svg class="ic arrow" viewBox="0 0 24 24"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></a>
+        <a class="btn btn-outline" href="tel:+97147034555">Call Us</a>
+      </div>
+    </div>
+    <footer class="footer">
+      <div class="footer-brand">
+        <a class="brand" href="#top"><span class="brand-mark">▲</span>Finridge</a>
+        <p>As an autonomous service provider, we specialize in delivering comprehensive retail finance solutions and services to both Islamic and conventional banks and financial institutions throughout the UAE.</p>
+      </div>
+      <div class="footer-cols">
+        <div class="footer-col"><h4>Services</h4><a href="#services">Credit Cards</a><a href="#services">Personal Finance</a></div>
+        <div class="footer-col"><h4>Company</h4><a href="#about">About</a><a href="https://finridge.net/index.php/car/" target="_blank" rel="noopener">Career</a><a href="https://www.linkedin.com/company/finridge-commercial-brokers-llc/" target="_blank" rel="noopener">LinkedIn</a></div>
+        <div class="footer-col"><h4>Contact</h4><a href="mailto:info@finridge.net">info@finridge.net</a><a href="tel:+97147034555">+971 4703 4555</a><a href="#contact">Dubai, UAE</a></div>
+      </div>
+    </footer>
+    <p class="copyright">© <span id="year"></span> Finridge Commercial Brokers LLC. All rights reserved.</p>
+  </section>
+</div>
+
+<!-- Reveal + year: plain script so the page works even if WebGL / CDN modules fail -->
+<script>
+(function(){
+  document.getElementById('year').textContent = new Date().getFullYear();
+  var els = document.querySelectorAll('[data-reveal]');
+  var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if (reduce || !('IntersectionObserver' in window)) {
+    els.forEach(function(el){ el.classList.add('in'); });
+    return;
+  }
+  var io = new IntersectionObserver(function(entries){
+    entries.forEach(function(e){
+      if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); }
+    });
+  }, { threshold:0.18, rootMargin:'0px 0px -8% 0px' });
+  els.forEach(function(el){ io.observe(el); });
+})();
+</script>
+
+<script type="module">
+import * as THREE from 'three';
+import { EffectComposer } from 'three/examples/jsm/postprocessing/EffectComposer.js';
+import { RenderPass } from 'three/examples/jsm/postprocessing/RenderPass.js';
+import { UnrealBloomPass } from 'three/examples/jsm/postprocessing/UnrealBloomPass.js';
+import { ShaderPass } from 'three/examples/jsm/postprocessing/ShaderPass.js';
+import { GammaCorrectionShader } from 'three/examples/jsm/shaders/GammaCorrectionShader.js';
+import { CopyShader } from 'three/examples/jsm/shaders/CopyShader.js';
+import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader.js';
+import { DRACOLoader } from 'three/examples/jsm/loaders/DRACOLoader.js';
+import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls.js';
+
+const REDUCED = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+/* ---------------- Lenis smooth scroll ---------------- */
+if (!REDUCED) {
+  import('https://unpkg.com/lenis@1.3.23/dist/lenis.mjs').then(({ default: Lenis }) => {
+    const lenis = new Lenis({ duration:1.15, smoothWheel:true, touchMultiplier:1.5 });
+    const raf = (t) => { lenis.raf(t); requestAnimationFrame(raf); };
+    requestAnimationFrame(raf);
+    document.querySelectorAll('a[href^="#"]').forEach((a) => {
+      a.addEventListener('click', (e) => {
+        const target = document.querySelector(a.getAttribute('href'));
+        if (!target) return;
+        e.preventDefault();
+        lenis.scrollTo(target);
+      });
+    });
+  }).catch((err) => console.warn('Lenis failed to load', err));
+}
+
+/* ---------------- Config ---------------- */
+const ASSET_BASE_URL = 'https://api.getlayers.ai/storage/v1/object/public/public/assets/ascend-d9857ad1f2';
+const PLANET_GLB = ASSET_BASE_URL + '/planet.glb';
+const PLANET_LIGHTS_GLB = ASSET_BASE_URL + '/planet-lights.glb';
+const PLANET_CLOUDS_PNG = ASSET_BASE_URL + '/planet-clouds.png';
+
+const CONFIG = {
+  rimColor:'#c1faff', rimPower:2.4, nightLights:10, terrainDepth:0.33, terrainShade:1.3,
+  oceanGlint:0.45, oceanDeep:0.12, oceanFlow:3, oceanFlowSpeed:0.8, oceanFlowScale:2.1,
+  glowColor:'#3a6cff', glowIntensity:3.35, planetRadius:1.95, spin:0.03, initRotation:2.07,
+  tilt:0.37, autoRotate:0,
+  cloud1Height:1.005, cloud1Opacity:0.6, cloud1Spin:0.06,
+  cloud2Height:1.03, cloud2Opacity:0.5, cloud2Spin:0.14,
+  cloud3Height:1.075, cloud3Opacity:0.5, cloud3Spin:0.1,
+  bgColor:'#040a1e', flameColor:'#3a6cff', flameColor2:'#c1faff', flameAmt:0.15,
+  atmoColor:'#9fc4ff', atmoCount:320, atmoSize:22, atmoSpeed:0.8,
+  starColor:'#cfe0ff', starCount:1400, starSize:1.6, starFlicker:1,
+  markerColor:'#ffd27a', markerCount:60, markerSize:16, markerSpeed:0.5,
+};
+const LAYERS = { NONE:0, TORUS_SCENE:1, BLOOM_SCENE:2, ENTIRE_SCENE:3 };
+
+const Lerp = (a, b, t) => a + (b - a) * t;
+const clamp = (v, lo, hi) => Math.min(hi, Math.max(lo, v));
+function hexToVec3(hex){
+  const n = parseInt(hex.replace('#',''), 16);
+  return new THREE.Vector3(((n >> 16) & 255) / 255, ((n >> 8) & 255) / 255, (n & 255) / 255);
+}
+function sample(stops, p){
+  if (p <= stops[0].p) return stops[0].v;
+  for (let i = 0; i < stops.length - 1; i++){
+    const a = stops[i], b = stops[i + 1];
+    if (p <= b.p){
+      let t = (p - a.p) / (b.p - a.p);
+      t = t * t * (3 - 2 * t);
+      return Lerp(a.v, b.v, t);
+    }
+  }
+  return stops[stops.length - 1].v;
+}
+
+const SNOISE = `
+vec4 permute(vec4 x){return mod(((x*34.0)+1.0)*x, 289.0);}
+vec4 taylorInvSqrt(vec4 r){return 1.79284291400159 - 0.85373472095314 * r;}
+float snoise(vec3 v){
+  const vec2 C = vec2(1.0/6.0, 1.0/3.0); const vec4 D = vec4(0.0, 0.5, 1.0, 2.0);
+  vec3 i = floor(v + dot(v, C.yyy)); vec3 x0 = v - i + dot(i, C.xxx);
+  vec3 g = step(x0.yzx, x0.xyz); vec3 l = 1.0 - g;
+  vec3 i1 = min(g.xyz, l.zxy); vec3 i2 = max(g.xyz, l.zxy);
+  vec3 x1 = x0 - i1 + 1.0 * C.xxx; vec3 x2 = x0 - i2 + 2.0 * C.xxx; vec3 x3 = x0 - 1.0 + 3.0 * C.xxx;
+  i = mod(i, 289.0);
+  vec4 p = permute(permute(permute(i.z + vec4(0.0, i1.z, i2.z, 1.0)) + i.y + vec4(0.0, i1.y, i2.y, 1.0)) + i.x + vec4(0.0, i1.x, i2.x, 1.0));
+  float n_ = 1.0/7.0; vec3 ns = n_ * D.wyz - D.xzx;
+  vec4 j = p - 49.0 * floor(p * ns.z *ns.z);
+  vec4 x_ = floor(j * ns.z); vec4 y_ = floor(j - 7.0 * x_);
+  vec4 x = x_ *ns.x + ns.yyyy; vec4 y = y_ *ns.x + ns.yyyy; vec4 h = 1.0 - abs(x) - abs(y);
+  vec4 b0 = vec4(x.xy, y.xy); vec4 b1 = vec4(x.zw, y.zw);
+  vec4 s0 = floor(b0)*2.0 + 1.0; vec4 s1 = floor(b1)*2.0 + 1.0; vec4 sh = -step(h, vec4(0.0));
+  vec4 a0 = b0.xzyw + s0.xzyw*sh.xxyy; vec4 a1 = b1.xzyw + s1.xzyw*sh.zzww;
+  vec3 p0 = vec3(a0.xy,h.x); vec3 p1 = vec3(a0.zw,h.y); vec3 p2 = vec3(a1.xy,h.z); vec3 p3 = vec3(a1.zw,h.w);
+  vec4 norm = taylorInvSqrt(vec4(dot(p0,p0), dot(p1,p1), dot(p2, p2), dot(p3,p3)));
+  p0 *= norm.x; p1 *= norm.y; p2 *= norm.z; p3 *= norm.w;
+  vec4 m = max(0.5 - vec4(dot(x0,x0), dot(x1,x1), dot(x2,x2), dot(x3,x3)), 0.0); m = m * m;
+  return 42.0 * dot(m*m, vec4(dot(p0,x0), dot(p1,x1), dot(p2,x2), dot(p3,x3)));
+}
+`;
+
+/* ---------------- Renderer / scene / camera ---------------- */
+const canvas = document.querySelector('.planet-canvas');
+let W = window.innerWidth, H = window.innerHeight;
+
+const renderer = new THREE.WebGL1Renderer({ canvas, antialias:true });
+renderer.setPixelRatio(window.devicePixelRatio);
+renderer.setSize(W, H, false);
+renderer.outputEncoding = THREE.sRGBEncoding;
+renderer.shadowMap.enabled = true;
+renderer.shadowMap.type = THREE.VSMShadowMap;
+
+const scene = new THREE.Scene();
+scene.background = new THREE.Color(0x000000);
+
+const camera = new THREE.PerspectiveCamera(40, W / H, 0.1, 200);
+camera.position.set(0, 0, 8);
+camera.layers.enable(LAYERS.TORUS_SCENE);
+camera.layers.enable(LAYERS.BLOOM_SCENE);
+camera.layers.enable(LAYERS.ENTIRE_SCENE);
+scene.add(camera);
+
+const ambient = new THREE.AmbientLight(0xffffff, 1.8);
+ambient.layers.set(LAYERS.ENTIRE_SCENE);
+scene.add(ambient);
+const dirLight = new THREE.DirectionalLight(0xffffff, 0.8);
+dirLight.position.set(0, 10, 2);
+dirLight.layers.set(LAYERS.ENTIRE_SCENE);
+scene.add(dirLight);
+
+const resVec = () => new THREE.Vector2(W * renderer.getPixelRatio(), H * renderer.getPixelRatio());
+
+/* ---------------- FinalPass shader ---------------- */
+const FinalPass = {
+  uniforms: {
+    iTime:{value:0}, tDiffuse:{value:null}, torusTexture:{value:null}, bloomTexture:{value:null}, haloTexture:{value:null},
+    uBg:{value:hexToVec3(CONFIG.bgColor)}, uFlameA:{value:hexToVec3(CONFIG.flameColor)},
+    uFlameB:{value:hexToVec3(CONFIG.flameColor2)}, uFlameAmt:{value:CONFIG.flameAmt},
+  },
+  vertexShader: `varying vec2 vUv; void main(){ vUv = uv; gl_Position = vec4(position, 1.0); }`,
+  fragmentShader: `
+    uniform float iTime; uniform sampler2D tDiffuse; uniform sampler2D bloomTexture; uniform sampler2D torusTexture; uniform sampler2D haloTexture;
+    uniform vec3 uBg; uniform vec3 uFlameA; uniform vec3 uFlameB; uniform float uFlameAmt;
+    varying vec2 vUv;
+    vec3 warp3d(vec3 pos, float t){ float curv=.8,a=1.9,b=0.7; pos*=2.;
+      pos.x+=curv*sin(t+a*pos.y)+t*b; pos.y+=curv*cos(t+a*pos.x);
+      pos.y+=curv*sin(t+a*pos.z)+t*b; pos.z+=curv*cos(t+a*pos.y);
+      pos.z+=curv*sin(t+a*pos.x)+t*b; pos.x+=curv*cos(t+a*pos.z);
+      return 0.5+0.5*cos(pos.xyz+vec3(1,2,4)); }
+    void main(){
+      vec2 uv = 2.*vUv - 1.;
+      vec3 w = pow(warp3d(vec3(uv.x, sin(uv.y), uv.y), iTime*1.5), vec3(1.5));
+      vec3 flame = 1.5*uFlameA*w.x; flame*=w.y; flame += uFlameB*w.z;
+      flame *= smoothstep(0.25, 1., abs(uv.y));
+      float md = smoothstep(-0.7, 1., -uv.y*uv.x); flame *= md*md;
+      vec3 bg = uBg * (1.0 - 0.4 * length(uv));
+      vec3 halo = texture2D(haloTexture, vUv).xyz;
+      gl_FragColor = vec4(bg + flame*uFlameAmt + texture2D(bloomTexture, vUv).xyz + texture2D(torusTexture, vUv).xyz + texture2D(tDiffuse, vUv).xyz + halo, 1.);
+    }`,
+};
+
+/* ---------------- Composers ---------------- */
+const torusComposer = new EffectComposer(renderer);
+torusComposer.renderToScreen = false;
+torusComposer.addPass(new RenderPass(scene, camera));
+torusComposer.addPass(new ShaderPass(GammaCorrectionShader));
+torusComposer.addPass(new UnrealBloomPass(new THREE.Vector2(W, H), 0.22, 0.2, 0));
+torusComposer.addPass(new ShaderPass(CopyShader));
+
+const bloomComposer = new EffectComposer(renderer);
+bloomComposer.renderToScreen = false;
+bloomComposer.addPass(new RenderPass(scene, camera));
+bloomComposer.addPass(new UnrealBloomPass(new THREE.Vector2(W, H), 0.5, 0.6, 0));
+bloomComposer.addPass(new ShaderPass(GammaCorrectionShader));
+
+const finalComposer = new EffectComposer(renderer);
+finalComposer.addPass(new RenderPass(scene, camera));
+const finalPass = new ShaderPass(FinalPass);
+finalPass.uniforms.bloomTexture.value = bloomComposer.renderTarget1.texture;
+finalPass.uniforms.torusTexture.value = torusComposer.renderTarget1.texture;
+finalComposer.addPass(finalPass);
+
+/* ---------------- Controls (never capture input) ---------------- */
+const controls = new OrbitControls(camera, renderer.domElement);
+controls.enableDamping = true;
+controls.dampingFactor = 0.06;
+controls.enablePan = false;
+controls.enabled = false;
+controls.autoRotate = true;
+controls.autoRotateSpeed = CONFIG.autoRotate;
+controls.minDistance = 3.5;
+controls.maxDistance = 16;
+controls.target.set(0, 0, 0);
+// OrbitControls sets touch-action:none on its element; the canvas must never affect scrolling
+renderer.domElement.style.touchAction = 'auto';
+
+/* ---------------- Scroll storytelling stops ---------------- */
+const STOPS_X = [{p:0,v:0},{p:0.32,v:-3.1},{p:0.64,v:3.2},{p:1,v:0}];
+const STOPS_Y = [{p:0,v:-4.5},{p:0.32,v:0.55},{p:0.64,v:0.45},{p:1,v:0.15}];
+const STOPS_S = [{p:0,v:2.15},{p:0.32,v:1.0},{p:0.64,v:0.92},{p:1,v:1.12}];
+const ENTRY_DUR = 1.9, ENTRY_START_Y = -6.5;
+
+/* ---------------- Scene hierarchy ---------------- */
+const worldGroup = new THREE.Group();
+worldGroup.position.set(STOPS_X[0].v, STOPS_Y[0].v, 0);
+worldGroup.scale.setScalar(STOPS_S[0].v);
+scene.add(worldGroup);
+
+const planetGroup = new THREE.Group();
+planetGroup.rotation.z = CONFIG.tilt;
+worldGroup.add(planetGroup);
+
+const cloudGroup = new THREE.Group();
+cloudGroup.rotation.z = CONFIG.tilt;
+cloudGroup.visible = false;
+worldGroup.add(cloudGroup);
+
+const planetTime = { value:0 }, cloudTime = { value:0 }, starTime = { value:0 }, markerTime = { value:0 };
+
+/* ---------------- Atmosphere halo glow ---------------- */
+const glowMesh = new THREE.Mesh(
+  new THREE.PlaneGeometry(2, 2),
+  new THREE.ShaderMaterial({
+    transparent:true, side:THREE.DoubleSide, depthWrite:false, blending:THREE.AdditiveBlending,
+    uniforms:{ uGlow:{value:hexToVec3(CONFIG.glowColor)}, uIntensity:{value:CONFIG.glowIntensity} },
+    vertexShader:`varying vec2 vUv; void main(){ vUv=uv; gl_Position = projectionMatrix*modelViewMatrix*vec4(position,1.0); }`,
+    fragmentShader:`
+      uniform vec3 uGlow; uniform float uIntensity; varying vec2 vUv;
+      void main(){
+        float d = length(vUv - 0.5) * 2.0;
+        float a = pow(clamp(1.0 - d, 0.0, 1.0), 2.2);
+        gl_FragColor = vec4(uGlow * a * uIntensity, a);
+      }`,
+  })
+);
+glowMesh.scale.setScalar(CONFIG.planetRadius * 2.3);
+glowMesh.layers.set(LAYERS.ENTIRE_SCENE);
+worldGroup.add(glowMesh);
+
+/* ---------------- Cloud shells ---------------- */
+const cloudTex = new THREE.TextureLoader().load(PLANET_CLOUDS_PNG);
+cloudTex.wrapS = cloudTex.wrapT = THREE.RepeatWrapping;
+cloudTex.repeat.set(5, 5);
+
+const cloudLayers = [
+  { h:'cloud1Height', o:'cloud1Opacity', s:'cloud1Spin', ry:0.0, phase:0.0 },
+  { h:'cloud2Height', o:'cloud2Opacity', s:'cloud2Spin', ry:2.2, phase:13.0 },
+  { h:'cloud3Height', o:'cloud3Opacity', s:'cloud3Spin', ry:4.3, phase:27.0 },
+];
+const cloudMeshes = cloudLayers.map((layer) => {
+  const mat = new THREE.MeshStandardMaterial({ map:cloudTex, transparent:true, depthWrite:false });
+  mat.onBeforeCompile = (shader) => {
+    shader.uniforms.uTime = cloudTime;
+    shader.uniforms.noiseScale = { value:20 };
+    shader.uniforms.uSpeedX = { value:1 };
+    shader.uniforms.uSpeedY = { value:2 };
+    shader.uniforms.uSpeedZ = { value:2 };
+    shader.uniforms.uOpacity = { value:CONFIG[layer.o] };
+    shader.uniforms.uPhase = { value:layer.phase };
+    shader.vertexShader = 'varying vec2 vCloudUv;\n' +
+      shader.vertexShader.replace(/void\s+main\s*\(\s*\)\s*\{/, 'void main(){\n  vCloudUv = uv;');
+    shader.fragmentShader = `
+      varying vec2 vCloudUv;
+      uniform float uTime; uniform float noiseScale; uniform float uSpeedX; uniform float uSpeedY; uniform float uSpeedZ;
+      uniform float uOpacity; uniform float uPhase;
+      ${SNOISE}
+    ` + shader.fragmentShader.replace('#include <dithering_fragment>', `
+      #include <dithering_fragment>
+      gl_FragColor.rgb = vec3(1.0);
+      float cloudNoise = snoise(vec3(vCloudUv.x * noiseScale + uTime * uSpeedX + uPhase, vCloudUv.y * noiseScale - uTime * uSpeedY + uPhase, uTime * uSpeedZ + uPhase));
+      float cloudNdv = max(dot(normalize(vNormal), normalize(vViewPosition)), 0.0);
+      float cloudEdge = pow(1.0 - cloudNdv, 3.0);
+      float cloudMod = mix(cloudNoise, 1.0, cloudEdge);
+      float cloudNdl = dot(normalize(vNormal), normalize(vec3(-0.9, 0.18, 0.4)));
+      float cloudDay = 1.0 - smoothstep(0.30, -0.30, cloudNdl) * 0.9;
+      gl_FragColor.a *= cloudMod * uOpacity * cloudDay;
+    `);
+  };
+  mat.customProgramCacheKey = () => 'cloud-shell';
+  const mesh = new THREE.Mesh(new THREE.SphereGeometry(CONFIG.planetRadius * CONFIG[layer.h], 64, 64), mat);
+  mesh.rotation.y = layer.ry;
+  mesh.renderOrder = 2;
+  mesh.layers.set(LAYERS.ENTIRE_SCENE);
+  mesh.userData.spinKey = layer.s;
+  cloudGroup.add(mesh);
+  return mesh;
+});
+
+/* ---------------- Ambient atmosphere motes ---------------- */
+{
+  const n = CONFIG.atmoCount;
+  const pos = new Float32Array(n * 3), size = new Float32Array(n), seed = new Float32Array(n);
+  for (let i = 0; i < n; i++){
+    pos[i*3] = Math.random() * 2 - 1; pos[i*3+1] = Math.random() * 2 - 1; pos[i*3+2] = Math.random() * 2 - 1;
+    size[i] = CONFIG.atmoSize * (0.4 + Math.random());
+    seed[i] = Math.random();
+  }
+  const geo = new THREE.BufferGeometry();
+  geo.setAttribute('position', new THREE.BufferAttribute(pos, 3));
+  geo.setAttribute('size', new THREE.BufferAttribute(size, 1));
+  geo.setAttribute('seed', new THREE.BufferAttribute(seed, 1));
+  const mat = new THREE.ShaderMaterial({
+    transparent:true, depthWrite:false, depthTest:false, blending:THREE.AdditiveBlending,
+    uniforms:{ uTime:{value:0}, uRes:{value:resVec()}, uColor:{value:hexToVec3(CONFIG.atmoColor)} },
+    vertexShader:`
+      attribute float size; attribute float seed; uniform float uTime; uniform vec2 uRes;
+      varying float vA;
+      vec3 warp(vec3 p, float t){ float c=0.9,a=1.9,b=0.02,s=0.05; p*=2.;
+        p.x+=c*sin(s*t+a*p.y)+t*b; p.y+=c*cos(s*t+a*p.x); p.y+=c*sin(s*t+a*p.z)+t*b;
+        p.z+=c*cos(s*t+a*p.y); p.z+=c*sin(s*t+a*p.x)+t*b; p.x+=c*cos(s*t+a*p.z);
+        return cos(p+vec3(1,2,4)); }
+      void main(){
+        vec3 v = position*4.0 + warp(position, uTime)*1.2;
+        vec4 mv = modelViewMatrix * vec4(v, 1.0);
+        float r = length(v); float farF = 1.0 - smoothstep(5.0, 6.5, r); float nearF = smoothstep(0.0, 0.5, -mv.z);
+        vA = farF * nearF;
+        gl_PointSize = size * uRes.y / 900.0 / -mv.z; gl_PointSize = max(gl_PointSize, 1.0);
+        gl_Position = projectionMatrix * mv;
+      }`,
+    fragmentShader:`
+      uniform vec3 uColor; varying float vA;
+      void main(){ vec2 p = gl_PointCoord - 0.5; float l = length(p); if (l > 0.5) discard;
+        float tex = smoothstep(0.5, 0.0, l); gl_FragColor = vec4(uColor * tex, tex * vA * 0.55); }`,
+  });
+  var atmoPoints = new THREE.Points(geo, mat);
+  atmoPoints.frustumCulled = false;
+  atmoPoints.layers.set(LAYERS.ENTIRE_SCENE);
+  atmoPoints.onBeforeRender = () => {
+    const t = performance.now() / 1000;
+    mat.uniforms.uTime.value = t * CONFIG.atmoSpeed * 8;
+    atmoPoints.position.copy(camera.position);
+    finalPass.uniforms.iTime.value = t;
+  };
+  scene.add(atmoPoints);
+}
+
+/* ---------------- Starfield ---------------- */
+{
+  const n = CONFIG.starCount;
+  const pos = new Float32Array(n * 3), seed = new Float32Array(n), bright = new Float32Array(n);
+  for (let i = 0; i < n; i++){
+    const u = Math.random() * 2 - 1, th = Math.random() * Math.PI * 2, s = Math.sqrt(1 - u * u);
+    pos[i*3] = 90 * s * Math.cos(th); pos[i*3+1] = 90 * u; pos[i*3+2] = 90 * s * Math.sin(th);
+    seed[i] = Math.random() * Math.PI * 2 * 10;
+    bright[i] = 0.35 + Math.random() * 0.65;
+  }
+  const geo = new THREE.BufferGeometry();
+  geo.setAttribute('position', new THREE.BufferAttribute(pos, 3));
+  geo.setAttribute('seed', new THREE.BufferAttribute(seed, 1));
+  geo.setAttribute('bright', new THREE.BufferAttribute(bright, 1));
+  var starMat = new THREE.ShaderMaterial({
+    transparent:true, depthWrite:false, depthTest:true, blending:THREE.AdditiveBlending,
+    uniforms:{ uTime:starTime, uSize:{value:CONFIG.starSize}, uFlicker:{value:CONFIG.starFlicker},
+      uColor:{value:hexToVec3(CONFIG.starColor)}, uRes:{value:resVec()} },
+    vertexShader:`
+      attribute float seed; attribute float bright;
+      uniform float uTime; uniform float uSize; uniform float uFlicker; uniform vec2 uRes;
+      varying float vTw;
+      void main(){
+        vec4 mv = modelViewMatrix * vec4(position, 1.0);
+        float tw = 0.6 + 0.4 * sin(uTime * uFlicker + seed);
+        vTw = bright * tw;
+        gl_PointSize = max(uSize * uRes.y / 900.0 * (90.0 / max(-mv.z, 1.0)), 1.0);
+        gl_Position = projectionMatrix * mv;
+      }`,
+    fragmentShader:`
+      uniform vec3 uColor; varying float vTw;
+      void main(){
+        vec2 p = gl_PointCoord - 0.5; float l = length(p); if (l > 0.5) discard;
+        float core = smoothstep(0.5, 0.0, l);
+        gl_FragColor = vec4(uColor, core * vTw);
+      }`,
+  });
+  const stars = new THREE.Points(geo, starMat);
+  stars.frustumCulled = false;
+  stars.layers.set(LAYERS.ENTIRE_SCENE);
+  scene.add(stars);
+}
+
+/* ---------------- Planet ---------------- */
+let planetMesh = null, markerMat = null;
+let entryT = REDUCED ? ENTRY_DUR : -1; // -1 = waiting for the planet to load
+
+const draco = new DRACOLoader();
+draco.setDecoderPath('https://www.gstatic.com/draco/versioned/decoders/1.5.5/');
+const gltfLoader = new GLTFLoader();
+gltfLoader.setDRACOLoader(draco);
+
+function firstMesh(root){
+  let m = null;
+  root.traverse((o) => { if (!m && o.isMesh) m = o; });
+  return m;
+}
+
+function buildPlanet(gltf, nightTex){
+  const mesh = firstMesh(gltf.scene);
+  if (!mesh) return;
+  mesh.geometry.computeBoundingSphere();
+  const bs = mesh.geometry.boundingSphere;
+  const k = CONFIG.planetRadius / bs.radius;
+  mesh.removeFromParent();
+  mesh.scale.setScalar(k);
+  mesh.position.copy(bs.center).multiplyScalar(-k).applyQuaternion(mesh.quaternion);
+
+  const mat = mesh.material.clone();
+  mat.metalness = 0; mat.roughness = 1; mat.envMapIntensity = 0;
+  mat.onBeforeCompile = (shader) => {
+    Object.assign(shader.uniforms, {
+      time:planetTime, noiseScale:{value:30}, speedX:{value:1.5}, speedY:{value:2.0}, speedZ:{value:2.5},
+      rimColor:{value:new THREE.Color(CONFIG.rimColor)}, rimPower:{value:CONFIG.rimPower},
+      nightBlendTexture:{value:nightTex}, nightLights:{value:CONFIG.nightLights},
+      terrainDepth:{value:CONFIG.terrainDepth}, terrainShade:{value:CONFIG.terrainShade},
+      oceanGlint:{value:CONFIG.oceanGlint}, oceanDeep:{value:CONFIG.oceanDeep},
+      oceanFlow:{value:CONFIG.oceanFlow}, oceanFlowSpeed:{value:CONFIG.oceanFlowSpeed}, oceanFlowScale:{value:CONFIG.oceanFlowScale},
+    });
+    shader.vertexShader = 'varying vec2 vCustomUv;\n' +
+      shader.vertexShader.replace(/void\s+main\s*\(\s*\)\s*\{/, 'void main(){\n  vCustomUv = uv;');
+    shader.fragmentShader = `
+      varying vec2 vCustomUv;
+      uniform float time; uniform float noiseScale; uniform float speedX; uniform float speedY; uniform float speedZ;
+      uniform vec3 rimColor; uniform float rimPower;
+      uniform sampler2D nightBlendTexture; uniform float nightLights;
+      uniform float terrainDepth; uniform float terrainShade;
+      uniform float oceanGlint; uniform float oceanDeep; uniform float oceanFlow; uniform float oceanFlowSpeed; uniform float oceanFlowScale;
+      ${SNOISE}
+    ` + shader.fragmentShader.replace('#include <dithering_fragment>', `
+      #include <dithering_fragment>
+      vec3 normalizedNormal = normalize(vNormal);
+      vec3 viewDir = normalize(vViewPosition);
+      float rim = 1.0 - max(dot(viewDir, normalizedNormal), 0.0);
+      rim = pow(rim, rimPower); rim = pow(rim, 1.5); rim *= 0.7;
+      vec3 currentColor = gl_FragColor.rgb;
+      float blueDom = currentColor.b - max(currentColor.r, currentColor.g);
+      float waterMask = clamp(smoothstep(-0.005, 0.03, blueDom), 0.0, 1.0);
+      float shimmer = snoise(vec3(vCustomUv.x * noiseScale + time * speedX, vCustomUv.y * noiseScale - time * speedY, time * speedZ));
+      gl_FragColor.rgb += waterMask * shimmer * 0.025;
+      float fT = time * oceanFlowSpeed * 4.0;
+      float fS = 4.0 * oceanFlowScale;
+      float warp = snoise(vec3(vCustomUv.x * fS - fT * 0.5, vCustomUv.y * fS + fT * 0.4, fT * 0.5));
+      float flow = snoise(vec3(vCustomUv.x * fS * 2.0 + fT * 0.6 + warp, vCustomUv.y * fS * 2.0 - fT * 0.5, fT * 0.7));
+      flow = warp * 0.6 + flow * 0.4;
+      gl_FragColor.rgb += waterMask * flow * 0.12 * oceanFlow;
+      gl_FragColor.rgb = mix(gl_FragColor.rgb, vec3(0.01, 0.06, 0.16), waterMask * oceanDeep);
+      vec3 finalColor = mix(gl_FragColor.rgb, rimColor, rim);
+      gl_FragColor = vec4(finalColor, 1.0);
+      vec3 surfPos = -vViewPosition;
+      float terrH = dot(texture2D(map, vCustomUv).rgb, vec3(0.299, 0.587, 0.114));
+      vec3 sigX = dFdx(surfPos), sigY = dFdy(surfPos);
+      vec3 vR1 = cross(sigY, normalizedNormal), vR2 = cross(normalizedNormal, sigX);
+      float fDet = dot(sigX, vR1);
+      vec3 vGrad = sign(fDet) * (dFdx(terrH) * vR1 + dFdy(terrH) * vR2);
+      vec3 bumpedNormal = normalize(abs(fDet) * normalizedNormal - terrainDepth * vGrad);
+      vec3 shadeNormal = mix(bumpedNormal, normalizedNormal, waterMask);
+      vec3 cityLights = texture2D(nightBlendTexture, vCustomUv).rgb * gl_FragColor.rgb * nightLights;
+      vec3 viewSunDir = normalize(vec3(-0.9, 0.18, 0.4));
+      float ndl = dot(normalizedNormal, viewSunDir);
+      float dayAmt = smoothstep(-0.05, 0.35, ndl);
+      float relief = dot(shadeNormal, viewSunDir) - ndl;
+      gl_FragColor.rgb *= clamp(1.0 + relief * terrainShade * dayAmt, 0.55, 1.6);
+      float nightFactor  = smoothstep(0.18, -0.30, ndl);
+      float lightsFactor = smoothstep(0.30, -0.35, ndl);
+      gl_FragColor.rgb = mix(gl_FragColor.rgb, gl_FragColor.rgb * 0.08, nightFactor);
+      gl_FragColor.rgb += cityLights * lightsFactor;
+      vec3 halfDir = normalize(viewSunDir + viewDir);
+      float ripple = snoise(vec3(vCustomUv * 240.0, time * 4.0));
+      float ndh = max(dot(normalizedNormal, halfDir) + ripple * 0.02, 0.0);
+      float glint = pow(ndh, 140.0);
+      gl_FragColor.rgb += glint * waterMask * dayAmt * oceanGlint * vec3(1.0, 0.97, 0.88);
+    `);
+  };
+  mat.customProgramCacheKey = () => 'ascend-planet';
+  mesh.material = mat;
+  mesh.layers.set(LAYERS.ENTIRE_SCENE);
+  planetGroup.add(mesh);
+  planetMesh = mesh;
+  cloudGroup.visible = true;
+  if (entryT < 0) entryT = 0;
+
+  try { buildMarkers(mesh); } catch (err) { console.warn('Land markers skipped:', err); }
+}
+
+/* ---------------- Land markers ---------------- */
+function buildMarkers(mesh){
+  const geo = mesh.geometry;
+  const posAttr = geo.attributes.position, uvAttr = geo.attributes.uv, index = geo.index;
+  const img = mesh.material.map && mesh.material.map.image;
+  if (!posAttr || !uvAttr || !img) return;
+
+  // read base-color texture
+  const tw = Math.min(img.width, 2048), th = Math.min(img.height, 1024);
+  const cv = document.createElement('canvas'); cv.width = tw; cv.height = th;
+  const ctx = cv.getContext('2d', { willReadFrequently:true });
+  ctx.drawImage(img, 0, 0, tw, th);
+  const pix = ctx.getImageData(0, 0, tw, th).data;
+  const flipY = mesh.material.map.flipY;
+
+  // cumulative triangle areas
+  const triCount = index ? index.count / 3 : posAttr.count / 3;
+  const cum = new Float32Array(triCount);
+  const a = new THREE.Vector3(), b = new THREE.Vector3(), c = new THREE.Vector3();
+  const ab = new THREE.Vector3(), ac = new THREE.Vector3();
+  const vi = (t, k) => index ? index.getX(t * 3 + k) : t * 3 + k;
+  let total = 0;
+  for (let t = 0; t < triCount; t++){
+    a.fromBufferAttribute(posAttr, vi(t,0)); b.fromBufferAttribute(posAttr, vi(t,1)); c.fromBufferAttribute(posAttr, vi(t,2));
+    total += ab.subVectors(b, a).cross(ac.subVectors(c, a)).length() * 0.5;
+    cum[t] = total;
+  }
+  const center = geo.boundingSphere.center;
+  const out = [], seeds = [];
+  let tries = 0;
+  while (out.length / 3 < CONFIG.markerCount && tries++ < 20000){
+    const r = Math.random() * total;
+    let lo = 0, hi = triCount - 1;
+    while (lo < hi){ const mid = (lo + hi) >> 1; if (cum[mid] < r) lo = mid + 1; else hi = mid; }
+    const i0 = vi(lo,0), i1 = vi(lo,1), i2 = vi(lo,2);
+    let u = Math.random(), v = Math.random();
+    if (u + v > 1){ u = 1 - u; v = 1 - v; }
+    const w = 1 - u - v;
+    const tu = uvAttr.getX(i0) * w + uvAttr.getX(i1) * u + uvAttr.getX(i2) * v;
+    let tv = uvAttr.getY(i0) * w + uvAttr.getY(i1) * u + uvAttr.getY(i2) * v;
+    if (flipY) tv = 1 - tv;
+    const px = Math.min(tw - 1, Math.floor((tu - Math.floor(tu)) * tw));
+    const py = Math.min(th - 1, Math.floor((tv - Math.floor(tv)) * th));
+    const o = (py * tw + px) * 4;
+    const cr = pix[o], cg = pix[o+1], cb = pix[o+2];
+    if (cb > cr + 6 && cb > cg + 6) continue; // ocean
+    a.fromBufferAttribute(posAttr, i0).multiplyScalar(w)
+      .add(b.fromBufferAttribute(posAttr, i1).multiplyScalar(u))
+      .add(c.fromBufferAttribute(posAttr, i2).multiplyScalar(v));
+    a.sub(center).multiplyScalar(1.012).add(center);
+    out.push(a.x, a.y, a.z);
+    seeds.push(Math.random());
+  }
+  if (!out.length) return;
+  const mg = new THREE.BufferGeometry();
+  mg.setAttribute('position', new THREE.Float32BufferAttribute(out, 3));
+  mg.setAttribute('seed', new THREE.Float32BufferAttribute(seeds, 1));
+  markerMat = new THREE.ShaderMaterial({
+    transparent:true, depthTest:true, depthWrite:false, blending:THREE.AdditiveBlending,
+    uniforms:{ uTime:markerTime, uColor:{value:hexToVec3(CONFIG.markerColor)}, uSize:{value:CONFIG.markerSize},
+      uSpeed:{value:CONFIG.markerSpeed}, uRes:{value:resVec()} },
+    vertexShader:`
+      attribute float seed; uniform float uSize; uniform vec2 uRes;
+      varying float vSeed; varying float vFade;
+      void main(){
+        vSeed = seed;
+        vec4 mv = modelViewMatrix * vec4(position, 1.0);
+        vec3 vn = normalize(normalMatrix * normalize(position));
+        vec3 vd = normalize(-mv.xyz);
+        vFade = smoothstep(0.15, 0.5, dot(vn, vd));
+        gl_PointSize = max(uSize * uRes.y / 900.0 * (7.0 / max(-mv.z, 1.0)), 2.0);
+        gl_Position = projectionMatrix * mv;
+      }`,
+    fragmentShader:`
+      uniform vec3 uColor; uniform float uTime; uniform float uSpeed;
+      varying float vSeed; varying float vFade;
+      void main(){
+        if (vFade <= 0.001) discard;
+        vec2 p = gl_PointCoord - 0.5;
+        float d = length(p) * 2.0;
+        if (d > 1.0) discard;
+        float core = smoothstep(0.30, 0.0, d) * 1.2;
+        float ph = fract(uTime * uSpeed + vSeed);
+        float ring = smoothstep(0.07, 0.0, abs(d - ph)) * (1.0 - ph);
+        gl_FragColor = vec4(uColor, clamp(core + ring, 0.0, 1.0) * vFade);
+      }`,
+  });
+  const markers = new THREE.Points(mg, markerMat);
+  markers.frustumCulled = false;
+  markers.renderOrder = 3;
+  markers.layers.set(LAYERS.ENTIRE_SCENE);
+  mesh.add(markers);
+}
+
+/* ---------------- Asset loading ---------------- */
+const loadGLB = (url) => new Promise((res, rej) => gltfLoader.load(url, res, undefined, rej));
+(async () => {
+  let nightTex = null;
+  try {
+    const lights = await loadGLB(PLANET_LIGHTS_GLB);
+    const lm = firstMesh(lights.scene);
+    nightTex = lm && lm.material && lm.material.map;
+  } catch (err) { console.warn('planet-lights.glb failed to load', err); }
+  if (!nightTex) {
+    nightTex = new THREE.DataTexture(new Uint8Array([0,0,0,255]), 1, 1);
+    nightTex.needsUpdate = true;
+  }
+  try {
+    buildPlanet(await loadGLB(PLANET_GLB), nightTex);
+  } catch (err) { console.error('planet.glb failed to load', err); }
+})();
+
+/* ---------------- Resize ---------------- */
+function onResize(){
+  W = window.innerWidth; H = window.innerHeight;
+  const pr = window.devicePixelRatio;
+  camera.aspect = W / H; camera.updateProjectionMatrix();
+  renderer.setPixelRatio(pr);
+  renderer.setSize(W, H, false);
+  for (const c of [torusComposer, bloomComposer, finalComposer]) { c.setPixelRatio(pr); c.setSize(W, H); }
+  const r = resVec();
+  atmoPoints.material.uniforms.uRes.value.copy(r);
+  starMat.uniforms.uRes.value.copy(r);
+  if (markerMat) markerMat.uniforms.uRes.value.copy(r);
+}
+window.addEventListener('resize', onResize);
+
+/* ---------------- Loop ---------------- */
+const scrollP = () => {
+  const max = document.documentElement.scrollHeight - window.innerHeight;
+  return max > 0 ? clamp(window.scrollY / max, 0, 1) : 0;
+};
+let curP = scrollP();
+let curX = sample(STOPS_X, curP) * clamp(window.innerWidth / 1200, 0.5, 1);
+let curY = sample(STOPS_Y, curP), curS = sample(STOPS_S, curP);
+let spinPhase = 0, last = performance.now();
+
+function frame(now){
+  requestAnimationFrame(frame);
+  const dt = Math.min((now - last) / 1000, 0.05);
+  last = now;
+
+  planetTime.value += dt / 12;
+  cloudTime.value += dt / 20;
+  starTime.value += dt;
+  markerTime.value += dt;
+
+  const pTarget = scrollP();
+  curP += (pTarget - curP) * Math.min(1, dt * 4.5);
+  const sideScale = clamp(window.innerWidth / 1200, 0.5, 1);
+  const k = Math.min(1, dt * 3.2);
+  curX += (sample(STOPS_X, curP) * sideScale - curX) * k;
+  curY += (sample(STOPS_Y, curP) - curY) * k;
+  curS += (sample(STOPS_S, curP) - curS) * k;
+
+  let entryY = 0;
+  if (entryT < 0) entryY = ENTRY_START_Y;
+  else if (entryT < ENTRY_DUR){
+    entryT = Math.min(ENTRY_DUR, entryT + dt);
+    const t = entryT / ENTRY_DUR;
+    entryY = ENTRY_START_Y * Math.pow(1 - t, 3);
+  }
+  worldGroup.position.set(curX, curY + entryY, 0);
+  worldGroup.scale.setScalar(curS);
+
+  spinPhase += dt * CONFIG.spin;
+  planetGroup.rotation.y = CONFIG.initRotation + spinPhase + curP * Math.PI * 1.6;
+  for (const m of cloudMeshes) m.rotation.y += dt * CONFIG[m.userData.spinKey];
+
+  controls.update();
+  glowMesh.quaternion.copy(camera.quaternion);
+
+  camera.layers.set(LAYERS.TORUS_SCENE); torusComposer.render();
+  camera.layers.set(LAYERS.BLOOM_SCENE); bloomComposer.render();
+  camera.layers.set(LAYERS.ENTIRE_SCENE); finalComposer.render();
+}
+requestAnimationFrame(frame);
+</script>
+</body>
+</html>
