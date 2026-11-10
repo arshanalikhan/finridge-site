@@ -164,6 +164,77 @@ svg.ic.arrow{stroke-width:2}
   [data-reveal]{opacity:1;transform:none;transition:none}
   .dash-bar,.dash-fill,.dash-live i{animation:none !important}
 }
+
+/* ---------- FINRIDGE ADDITIONS ---------- */
+.brand-logo{display:inline-flex;align-items:center;background:#fff;border-radius:12px;padding:6px 12px;box-shadow:0 8px 26px -10px rgba(0,0,0,.7)}
+.brand-logo img{display:block;height:40px;width:auto}
+.hero-inner .eyebrow{margin-bottom:14px}
+.partner{display:inline-flex;align-items:center;justify-content:center;background:#fff;border-radius:12px;padding:8px 16px;height:58px;box-shadow:0 8px 26px -10px rgba(0,0,0,.7)}
+.partner img{display:block;max-height:42px;max-width:170px;width:auto;height:auto}
+.feature-grid.two{grid-template-columns:repeat(2,1fr)}
+.feature-grid.four{grid-template-columns:repeat(4,1fr)}
+.card-btn{margin-top:22px;position:relative}
+.dash-top-2{margin-top:22px;padding-top:20px;border-top:1px solid var(--line)}
+.dashboard .dash-mission{font-size:15.5px;margin-bottom:0}
+.stat-ic{width:46px;height:46px;margin:0 auto 14px;border-radius:12px;display:grid;place-items:center;color:var(--accent);background:rgba(93,240,168,.1);border:1px solid rgba(93,240,168,.18)}
+.stat-ic svg{width:22px;height:22px}
+.stat .stat-label{margin-top:0;font-size:15.5px;font-weight:600;color:var(--ink)}
+.section-head.sub{margin-top:clamp(56px,8vw,96px)}
+.prose{max-width:820px;margin:0 auto;padding:30px;border-radius:var(--radius);background:var(--glass);border:1px solid var(--line);-webkit-backdrop-filter:blur(14px);backdrop-filter:blur(14px)}
+.prose p{color:var(--muted);font-size:16px;line-height:1.75}
+.prose p+p{margin-top:16px}
+.note{max-width:760px;margin:36px auto 0;text-align:center;color:var(--muted);font-size:16px;line-height:1.7;text-shadow:0 1px 24px rgba(0,0,0,.55)}
+.jobs{display:grid;gap:14px;max-width:900px;margin:0 auto}
+.job{border-radius:var(--radius);background:var(--glass);border:1px solid var(--line);-webkit-backdrop-filter:blur(14px);backdrop-filter:blur(14px);overflow:hidden}
+.job[open]{background:var(--glass-2);border-color:var(--line-strong)}
+.job summary{list-style:none;cursor:pointer;display:flex;align-items:center;justify-content:space-between;gap:20px;padding:24px 28px}
+.job summary::-webkit-details-marker{display:none}
+.job summary h3{font-size:19px;font-weight:700;display:inline;margin-right:12px}
+.job-loc{font-size:12px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--accent)}
+.job summary p{margin-top:8px;font-size:15px;line-height:1.6;color:var(--muted)}
+.job-toggle{flex:none;font-size:13.5px;font-weight:600;padding:9px 16px;border-radius:999px;border:1px solid var(--line-strong);background:rgba(255,255,255,.05);white-space:nowrap}
+.job[open] .job-toggle{color:var(--accent)}
+.job-body{padding:0 28px 28px;color:var(--muted);font-size:15px;line-height:1.7}
+.job-sub{font-size:13px;color:var(--muted-2);padding-top:4px;border-top:1px solid var(--line);padding-top:18px}
+.job-body h4{color:var(--ink);font-size:15px;margin:20px 0 8px}
+.job-body ul{padding-left:20px;display:grid;gap:7px}
+.job-body strong{color:var(--ink);font-weight:600}
+.job-body .btn{margin-top:24px;white-space:normal;word-break:break-word}
+.contact-grid{display:grid;grid-template-columns:1.1fr 1fr;gap:24px;align-items:start}
+.contact-grid .cta-card{max-width:none;margin:0;text-align:left;padding:clamp(26px,4vw,40px)}
+.contact-form{display:grid;gap:16px}
+.contact-form label{display:grid;gap:8px;font-size:13.5px;font-weight:600;color:var(--ink)}
+.contact-form small{font-weight:400;color:var(--muted-2)}
+.contact-form .row{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.contact-form input,.contact-form select{width:100%;font:inherit;font-size:15px;font-weight:400;color:var(--ink);background:rgba(0,0,0,.3);border:1px solid var(--line-strong);border-radius:12px;padding:12px 14px;outline:none;transition:border-color .2s ease,box-shadow .2s ease}
+.contact-form select option{color:#111}
+.contact-form input:focus,.contact-form select:focus{border-color:var(--accent);box-shadow:0 0 0 3px rgba(93,240,168,.15)}
+.contact-form .btn{justify-self:start;font-family:inherit}
+.form-note{font-size:12.5px}
+.office{display:grid;gap:18px}
+.office-card p{margin:0 0 10px !important;max-width:none !important;font-size:15.5px !important;line-height:1.6 !important}
+.office-card strong{color:var(--ink)}
+.office-card .btn{margin-top:12px}
+.map{width:100%;height:260px;border:1px solid var(--line-strong);border-radius:var(--radius);display:block;filter:saturate(.85)}
+.footer-brand{max-width:380px}
+.footer-name{margin-top:16px;font-size:16px;font-weight:700}
+.footer-brand p{margin-top:8px}
+@media (max-width:980px){
+  .feature-grid.four{grid-template-columns:repeat(2,1fr)}
+  .contact-grid{grid-template-columns:1fr}
+}
+@media (max-width:720px){
+  .feature-grid.two{grid-template-columns:1fr}
+  .brand-logo img{height:32px}
+  .partner{height:48px;padding:6px 12px}
+  .partner img{max-height:34px;max-width:130px}
+}
+@media (max-width:560px){
+  .feature-grid.four{grid-template-columns:1fr}
+  .job summary{flex-direction:column;align-items:flex-start;padding:20px}
+  .job-body{padding:0 20px 22px}
+  .contact-form .row{grid-template-columns:1fr}
+}
 </style>
 </head>
 <body>
@@ -171,143 +242,312 @@ svg.ic.arrow{stroke-width:2}
 
 <div class="page" id="top">
 
-  <!-- SECTION 1 · HERO -->
+  <!-- HERO -->
   <header class="hero">
     <nav class="nav">
-      <a class="brand" href="#top"><span class="brand-mark">▲</span>Finridge</a>
+      <a class="brand-logo" href="#top"><img src="assets/logo.jpeg" alt="FinRidge — Unlock Your Financial Potential" width="699" height="209"></a>
       <div class="nav-links">
+        <a href="#top">Home</a>
         <a href="#services">Services</a>
+        <a href="#career">Career</a>
         <a href="#about">About</a>
-        <a href="https://finridge.net/index.php/car/" target="_blank" rel="noopener">Career</a>
         <a href="#contact">Contact Us</a>
       </div>
       <a class="btn btn-ghost" href="#contact">Get A Quote</a>
     </nav>
     <div class="hero-inner">
+      <span class="eyebrow" data-reveal>Build Your Dream</span>
       <h1 class="hero-title" data-reveal style="--rd:60ms">Unlock Your<br>Financial <em>Potential</em></h1>
       <p class="hero-sub" data-reveal style="--rd:180ms">Through our comprehensive credit card and loan services, empowering you to seize opportunities, conquer challenges, and pave the way towards your dreams.</p>
       <div class="hero-actions" data-reveal style="--rd:300ms">
-        <a class="btn btn-primary" href="https://finridge.net/index.php/contact-us/" target="_blank" rel="noopener">Apply Now
+        <a class="btn btn-primary" href="#contact">Apply Now
           <svg class="ic arrow" viewBox="0 0 24 24"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></a>
         <a class="btn btn-outline" href="#services">Our Services</a>
       </div>
     </div>
     <div class="logos" data-reveal style="--rd:420ms">
-      <div class="logos-label">Our trusted partners</div>
+      <div class="logos-label">Our Trusted Partners</div>
       <div class="logos-row">
-        <span class="logo">Sharjah Islamic Bank</span><span class="logo">Dubai Islamic Bank</span><span class="logo">Emirates Islamic</span>
+        <span class="partner"><img src="assets/partner-sib.webp" alt="Sharjah Islamic Bank" loading="lazy"></span>
+        <span class="partner"><img src="assets/partner-dib.png" alt="Dubai Islamic Bank" loading="lazy"></span>
+        <span class="partner"><img src="assets/partner-ei.png" alt="Emirates Islamic" loading="lazy"></span>
       </div>
     </div>
   </header>
 
-  <!-- SECTION 2 · SERVICES -->
-  <section class="section features" id="services">
-    <div class="section-head">
-      <span class="eyebrow" data-reveal>We offer</span>
-      <h2 data-reveal style="--rd:80ms">Financial solutions, made simple</h2>
-      <p data-reveal style="--rd:160ms">At Finridge, we simplify access to financial solutions through trusted partnerships with leading banks — transparent, efficient, and tailored services that empower you to make confident financial decisions.</p>
-    </div>
-    <div class="feature-grid">
-      <article class="card" data-reveal style="--rd:0ms">
-        <div class="card-icon"><svg class="ic" viewBox="0 0 24 24"><rect x="2" y="5" width="20" height="14" rx="2.5"/><path d="M2 10h20"/><path d="M6 15h4"/></svg></div>
-        <h3>Credit cards</h3>
-        <p>A reliable, efficient payment solution that lets individuals and businesses pay conveniently and securely, wherever cards are accepted.</p>
-      </article>
-      <article class="card" data-reveal style="--rd:90ms">
-        <div class="card-icon"><svg class="ic" viewBox="0 0 24 24"><path d="M4 19V5"/><path d="M4 19h16"/><path d="M8 16v-4"/><path d="M13 16V8"/><path d="M18 16v-7"/></svg></div>
-        <h3>Personal finance</h3>
-        <p>Personal loans matched to your income and goals, arranged through our partner banks across the UAE.</p>
-      </article>
-      <article class="card" data-reveal style="--rd:180ms">
-        <div class="card-icon"><svg class="ic" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M2 12h20"/><path d="M12 2a15 15 0 0 1 0 20 15 15 0 0 1 0-20Z"/></svg></div>
-        <h3>Islamic &amp; conventional</h3>
-        <p>A distributor and partner for both Conventional and Islamic banks and financial institutions throughout the UAE.</p>
-      </article>
-      <article class="card" data-reveal style="--rd:270ms">
-        <div class="card-icon"><svg class="ic" viewBox="0 0 24 24"><rect x="3" y="3" width="6" height="6" rx="1.5"/><rect x="15" y="15" width="6" height="6" rx="1.5"/><path d="M6 9v3a3 3 0 0 0 3 3h3"/></svg></div>
-        <h3>Tailored solutions</h3>
-        <p>Bespoke financial solutions that cater to your individual needs, from personal finance to business funding.</p>
-      </article>
-      <article class="card" data-reveal style="--rd:360ms">
-        <div class="card-icon"><svg class="ic" viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10Z"/><path d="m9 12 2 2 4-4"/></svg></div>
-        <h3>Trusted &amp; transparent</h3>
-        <p>Professionalism, integrity, and exceptional service — a dependable banking partner you can rely on.</p>
-      </article>
-      <article class="card" data-reveal style="--rd:450ms">
-        <div class="card-icon"><svg class="ic" viewBox="0 0 24 24"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></div>
-        <h3>Lasting relationships</h3>
-        <p>We are committed to building long-lasting relationships with our clients and providing the highest level of service possible.</p>
-      </article>
-    </div>
-  </section>
-
-  <!-- SECTION 3 · ABOUT + FACTS -->
+  <!-- ABOUT · MISSION · VISION -->
   <section class="section showcase" id="about">
     <div class="showcase-grid">
       <div class="showcase-copy">
-        <span class="eyebrow" data-reveal>About us</span>
-        <h2 data-reveal style="--rd:90ms">A trusted financial brokerage in the UAE</h2>
-        <p data-reveal style="--rd:180ms">Finridge Commercial Brokers is dedicated to connecting individuals and businesses with tailored banking and financial solutions through professionalism, integrity, and exceptional service.</p>
+        <span class="eyebrow" data-reveal>About Us</span>
+        <h2 data-reveal style="--rd:90ms">A trusted financial brokerage firm in the UAE</h2>
+        <p data-reveal style="--rd:180ms">Finridge Commercial Brokers is a trusted financial brokerage firm in the UAE, dedicated to connecting individuals and businesses with tailored banking and financial solutions through professionalism, integrity, and exceptional service.</p>
         <div data-reveal style="--rd:270ms">
-          <a class="btn btn-primary" href="#contact">Get in touch with us
+          <a class="btn btn-primary" href="#contact">Get in Touch With Us
             <svg class="ic arrow" viewBox="0 0 24 24"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></a>
         </div>
       </div>
       <div class="dashboard" data-reveal style="--rd:160ms">
-        <div class="dash-top">
-          <span class="dash-title">Our mission</span>
-          <span class="dash-live"><i></i>Finridge</span>
-        </div>
+        <div class="dash-top"><span class="dash-title">Mission</span><span class="dash-live"><i></i>FinRidge</span></div>
         <p class="dash-mission">Leading distributor and partner for Conventional and Islamic banks, providing exceptional services, fostering strong relationships, and driving growth through excellence and innovation.</p>
-        <div class="dash-bars" aria-hidden="true">
-          <span class="dash-bar" style="--h:62%;--i:0"></span>
-          <span class="dash-bar" style="--h:88%;--i:1"></span>
-          <span class="dash-bar" style="--h:47%;--i:2"></span>
-          <span class="dash-bar" style="--h:95%;--i:3"></span>
-          <span class="dash-bar" style="--h:71%;--i:4"></span>
-          <span class="dash-bar" style="--h:80%;--i:5"></span>
-          <span class="dash-bar" style="--h:58%;--i:6"></span>
-        </div>
-        <div class="dash-rows">
-          <div class="dash-row"><span>1 · Enquire</span><div class="dash-track"><div class="dash-fill" style="--w:25%"></div></div></div>
-          <div class="dash-row"><span>2 · Share details</span><div class="dash-track"><div class="dash-fill" style="--w:50%"></div></div></div>
-          <div class="dash-row"><span>3 · Bank match</span><div class="dash-track"><div class="dash-fill" style="--w:75%"></div></div></div>
-          <div class="dash-row"><span>4 · Apply</span><div class="dash-track"><div class="dash-fill" style="--w:100%"></div></div></div>
-        </div>
+        <div class="dash-top dash-top-2"><span class="dash-title">Vision</span></div>
+        <p class="dash-mission">Our goal is to establish ourselves as the top choice for banks and financial institutions as a channel partner by consistently providing outstanding value, creative solutions, and unparalleled customer service.</p>
       </div>
     </div>
     <div class="stats">
-      <div class="stat" data-reveal style="--rd:0ms"><div class="stat-value">Cards</div><div class="stat-label">Credit card services</div></div>
-      <div class="stat" data-reveal style="--rd:80ms"><div class="stat-value">Loans</div><div class="stat-label">Personal finance</div></div>
-      <div class="stat" data-reveal style="--rd:160ms"><div class="stat-value">Both</div><div class="stat-label">Islamic &amp; conventional banks</div></div>
-      <div class="stat" data-reveal style="--rd:240ms"><div class="stat-value">Dubai</div><div class="stat-label">UAE head office</div></div>
+      <div class="stat" data-reveal style="--rd:0ms"><div class="stat-ic"><svg class="ic" viewBox="0 0 24 24"><path d="m12 3 2.7 5.6 6.1.8-4.5 4.3 1.1 6.1L12 16.9 6.6 19.8l1.1-6.1L3.2 9.4l6.1-.8L12 3Z"/></svg></div><div class="stat-label">Extensive Industry Experience</div></div>
+      <div class="stat" data-reveal style="--rd:80ms"><div class="stat-ic"><svg class="ic" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M2 12h20"/><path d="M12 2a15 15 0 0 1 0 20 15 15 0 0 1 0-20Z"/></svg></div><div class="stat-label">Strong Industry Network</div></div>
+      <div class="stat" data-reveal style="--rd:160ms"><div class="stat-ic"><svg class="ic" viewBox="0 0 24 24"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></div><div class="stat-label">Client-Focused Approach</div></div>
+      <div class="stat" data-reveal style="--rd:240ms"><div class="stat-ic"><svg class="ic" viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10Z"/><path d="m9 12 2 2 4-4"/></svg></div><div class="stat-label">Regulatory Compliance Expertise</div></div>
     </div>
   </section>
 
-  <!-- SECTION 4 · CONTACT + FOOTER -->
+  <!-- WHAT WE OFFER -->
+  <section class="section features" id="services">
+    <div class="section-head">
+      <span class="eyebrow" data-reveal>What We Offer</span>
+      <h2 data-reveal style="--rd:80ms">Financial solutions through trusted bank partnerships</h2>
+      <p data-reveal style="--rd:160ms">At Finridge, we simplify access to financial solutions through trusted partnerships with leading banks. From personal finance to business funding, we provide transparent, efficient, and tailored services that empower you to make confident financial decisions.</p>
+    </div>
+
+    <div class="feature-grid two">
+      <article class="card" data-reveal style="--rd:0ms">
+        <div class="card-icon"><svg class="ic" viewBox="0 0 24 24"><rect x="2" y="5" width="20" height="14" rx="2.5"/><path d="M2 10h20"/><path d="M6 15h4"/></svg></div>
+        <h3>Credit Card</h3>
+        <p>Our Credit Card Service offers a reliable and efficient payment solution that empowers individuals and businesses to make transactions with ease. With the widespread acceptance of credit cards across various establishments, our service aims to simplify your purchasing experience and provide you with the freedom to make payments conveniently and securely.</p>
+        <a class="btn btn-outline card-btn" href="#contact" data-product="Credit card">Apply <svg class="ic arrow" viewBox="0 0 24 24"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></a>
+      </article>
+      <article class="card" data-reveal style="--rd:90ms">
+        <div class="card-icon"><svg class="ic" viewBox="0 0 24 24"><path d="M4 19V5"/><path d="M4 19h16"/><path d="M8 16v-4"/><path d="M13 16V8"/><path d="M18 16v-7"/></svg></div>
+        <h3>Personal Finance</h3>
+        <p>Our Personal Finance Service is designed to provide individuals with financial flexibility and support during various life events or financial needs. Whether you’re planning a dream vacation, consolidating debt, funding education, or facing unexpected expenses, our personal loan offerings are tailored to meet your unique requirements.</p>
+        <a class="btn btn-outline card-btn" href="#contact" data-product="Personal Loan">Apply <svg class="ic arrow" viewBox="0 0 24 24"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></a>
+      </article>
+
+    </div>
+  </section>
+
+  <!-- OUR SERVICES -->
+  <section class="section features" id="why">
+    <div class="section-head">
+      <span class="eyebrow" data-reveal>Our Services</span>
+      <h2 data-reveal style="--rd:80ms">Led by highly experienced professionals</h2>
+      <p data-reveal style="--rd:160ms">Finridge Commercial Brokers are led by highly experienced professionals with a wealth of expertise in the banking and service industries, specifically in the UAE and Indian markets.</p>
+    </div>
+
+    <div class="feature-grid four">
+      <article class="card" data-reveal style="--rd:0ms">
+        <div class="card-icon"><svg class="ic" viewBox="0 0 24 24"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></div>
+        <h3>Specialized Sales</h3>
+        <p>We have a dedicated sales team that focuses on promoting and selling our partners’ products to both retail and corporate clients.</p>
+      </article>
+      <article class="card" data-reveal style="--rd:90ms">
+        <div class="card-icon"><svg class="ic" viewBox="0 0 24 24"><path d="m12 3 2.7 5.6 6.1.8-4.5 4.3 1.1 6.1L12 16.9 6.6 19.8l1.1-6.1L3.2 9.4l6.1-.8L12 3Z"/></svg></div>
+        <h3>Excellence in Quality</h3>
+        <p>We ensure the onboarding of suitable customers and deliver unparalleled levels of service, setting the highest standard in our industry.</p>
+      </article>
+      <article class="card" data-reveal style="--rd:180ms">
+        <div class="card-icon"><svg class="ic" viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10Z"/><path d="m9 12 2 2 4-4"/></svg></div>
+        <h3>Fully Compliant</h3>
+        <p>We pledge to faithfully follow and meet all the compliance, governance, regulatory, and policy requirements set by our partners.</p>
+      </article>
+      <article class="card" data-reveal style="--rd:270ms">
+        <div class="card-icon"><svg class="ic" viewBox="0 0 24 24"><rect x="4" y="11" width="16" height="10" rx="2"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/></svg></div>
+        <h3>Safe Handling</h3>
+        <p>We prioritize the security of your personal and financial data. Your trust is paramount, and we’re dedicated to upholding the highest standards of data protection in every interaction.</p>
+      </article>
+
+    </div>
+  </section>
+
+  <!-- ABOUT (FULL) + FOUNDING PRINCIPLES -->
+  <section class="section features" id="company">
+    <div class="section-head">
+      <span class="eyebrow" data-reveal>About Finridge</span>
+      <h2 data-reveal style="--rd:80ms">Unlock your financial potential with us</h2>
+      <p data-reveal style="--rd:160ms">Finridge Commercial Broker Service Provider is a distinguished and reputable company based in the United Arab Emirates (UAE), specializing in offering comprehensive credit card and personal finance solutions to the country’s banking and financial sector. With a clear focus on providing seamless and reliable services, Finridge has emerged as a leading player in the industry, empowering individuals and businesses alike with easy access to credit and financing options.</p>
+    </div>
+
+    <div class="prose" data-reveal>
+      <p>At Finridge Commercial Brokers, we pride ourselves on being one of the most dependable and trustworthy banking partners you can rely on. Our top priority is delivering an exceptional customer experience by tailoring bespoke financial solutions that cater to your individual needs.</p>
+      <p>We’re a dynamic and fast-paced company that places a strong emphasis on employee engagement and well-being. Our competitive environment motivates our staff to strive for excellence, and we offer attractive incentives to reward their hard work and dedication.</p>
+      <p>At Finridge, we’re committed to building long-lasting relationships with our clients and providing the highest level of service possible. Whether you’re a business owner or an individual looking for financial guidance, we’re here to help you achieve your goals and succeed. Choose Finridge Commercial Brokers as your banking partner and experience the difference today.</p>
+    </div>
+    <div class="section-head sub">
+      <span class="eyebrow" data-reveal>Our customers stay at the focus</span>
+      <h2 data-reveal style="--rd:80ms">Our Founding Principles</h2>
+    </div>
+
+    <div class="feature-grid two">
+      <article class="card" data-reveal style="--rd:0ms">
+        <div class="card-icon"><svg class="ic" viewBox="0 0 24 24"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></div>
+        <h3>Customer-Centric Approach</h3>
+        <p>At the heart of Finridge’s ethos lies a strong commitment to prioritize the needs and aspirations of its clients. The company recognizes that each individual or business seeking credit card or personal loan services has unique requirements and financial goals. As such, Finridge tailors its offerings to ensure maximum customer satisfaction.</p>
+      </article>
+      <article class="card" data-reveal style="--rd:90ms">
+        <div class="card-icon"><svg class="ic" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M2 12h20"/><path d="M12 2a15 15 0 0 1 0 20 15 15 0 0 1 0-20Z"/></svg></div>
+        <h3>Financial Inclusion and Accessibility</h3>
+        <p>Finridge firmly believes in promoting financial inclusion, ensuring that credit and personal loan facilities are accessible to a wide range of customers. By partnering with UAE’s banking and financial institutions, Finridge brings financial products and services closer to the community, fostering economic growth and stability.</p>
+      </article>
+      <article class="card" data-reveal style="--rd:180ms">
+        <div class="card-icon"><svg class="ic" viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10Z"/><path d="m9 12 2 2 4-4"/></svg></div>
+        <h3>Trust and Transparency</h3>
+        <p>Trust is the cornerstone of any financial relationship. Finridge upholds the highest standards of transparency and ethical conduct in its dealings, fostering strong and lasting partnerships with clients and financial institutions.</p>
+      </article>
+      <article class="card" data-reveal style="--rd:270ms">
+        <div class="card-icon"><svg class="ic" viewBox="0 0 24 24"><path d="M13 2 3 14h9l-1 8 10-12h-9l1-8Z"/></svg></div>
+        <h3>Innovation and Adaptability</h3>
+        <p>The financial landscape is constantly evolving, and Finridge stays ahead of the curve by embracing innovation and adapting to emerging trends and technologies. By leveraging cutting-edge solutions, the company ensures that its clients receive efficient and forward-looking services.</p>
+      </article>
+
+    </div>
+    <p class="note" data-reveal>We’re proud to partner with top banks in UAE. Finridge upholds the highest standards of transparency and ethical conduct in its dealings, fostering strong and lasting partnerships with clients and financial institutions.</p>
+  </section>
+
+  <!-- CAREERS -->
+  <section class="section features" id="career">
+    <div class="section-head">
+      <span class="eyebrow" data-reveal>Careers · Looking for a job in Dubai?</span>
+      <h2 data-reveal style="--rd:80ms">Join our team: unlocking opportunities at FinRidge</h2>
+      <p data-reveal style="--rd:160ms">Looking for fresher and experienced candidates with relevant skills — contact us to know more. Explore your role in our careers. We build lasting relationships between candidates &amp; businesses.</p>
+    </div>
+
+    <div class="jobs">
+      <details class="job" data-reveal style="--rd:0ms">
+        <summary><div><h3>Credit Card Sales</h3><span class="job-loc">Dubai, UAE</span><p>We are seeking a motivated and results-driven Credit Card Sales Representative to join our dynamic sales team.</p></div><span class="job-toggle">View Details</span></summary>
+        <div class="job-body">
+          <div class="job-sub">Credit Card Sales Representative · Full Time Position</div>
+          <h4>Job Description</h4><p>We are seeking a proactive and goal-oriented Credit Card Sales Representative to join our dynamic sales team. As a Credit Card Sales Representative, you will be responsible for promoting and selling our credit card products to potential customers. Your primary objective will be to acquire new clients, build strong relationships, and drive credit card sales to meet or exceed targets.</p>
+          <h4>Responsibilities</h4><ul><li><strong>Customer Prospecting:</strong> Identify potential customers through various channels, including cold-calling, referrals, networking events, and online research.</li><li><strong>Sales Presentations:</strong> Engage with prospective clients to present the features and benefits of our credit card products. Demonstrate how our offerings align with their financial needs and goals.</li><li><strong>Relationship Building:</strong> Build and nurture relationships with potential and existing customers, understanding their preferences and financial requirements.</li><li><strong>Application Processing:</strong> Assist customers in completing credit card applications and guide them through the approval process.</li><li><strong>Achieve Sales Targets:</strong> Meet or exceed monthly sales targets and performance goals. Track and report progress regularly to the sales manager.</li><li><strong>Customer Support:</strong> Provide exceptional customer service to address inquiries, resolve issues, and ensure customer satisfaction.</li><li><strong>Stay Informed on Products and Industry:</strong> Stay updated on our credit card products, promotional offers, and industry trends. Keep abreast of competitors’ offerings to maintain a competitive edge.</li><li><strong>Compliance and Documentation:</strong> Ensure adherence to regulatory guidelines, company policies, and ethical practices in all sales activities and customer interactions.</li><li><strong>Sales Reporting:</strong> Maintain accurate and organized records of sales activities, customer interactions, and pipeline opportunities in the Customer Relationship Management (CRM) system.</li></ul>
+          <h4>Qualifications</h4><ul><li>Proven track record in sales, preferably in credit card sales or financial services.</li><li>Strong communication and interpersonal skills to engage effectively with customers.</li><li>Persuasive negotiation and closing abilities to achieve sales targets.</li><li>Self-motivated and result-oriented with a passion for meeting and exceeding goals.</li><li>Ability to adapt to a dynamic and fast-paced sales environment.</li><li>Basic knowledge of financial products and services.</li><li>Familiarity with CRM software and sales tools is a plus.</li><li>Ethical and customer-focused approach to sales, ensuring fair and transparent dealings.</li></ul>
+          <a class="btn btn-primary" href="mailto:talentacquisition@finridge.net?subject=Application%20-%20Credit%20Card%20Sales">Apply · talentacquisition@finridge.net</a>
+        </div>
+      </details>
+      <details class="job" data-reveal style="--rd:70ms">
+        <summary><div><h3>Personal Finance Sales</h3><span class="job-loc">Dubai, UAE</span><p>We are seeking a dynamic and motivated Personal Finance Sales Specialist to join our financial services team.</p></div><span class="job-toggle">View Details</span></summary>
+        <div class="job-body">
+          <div class="job-sub">Personal Finance Sales Specialist</div>
+          <h4>Job Description</h4><p>We are seeking a dynamic and motivated Personal Finance Sales Specialist to join our financial services team. As a Personal Finance Sales Specialist, you will be responsible for offering personalized financial guidance and selling a range of financial products and services to clients. Your primary objective will be to understand clients’ financial goals, provide tailored solutions, and help them achieve financial success and security.</p>
+          <h4>Responsibilities</h4><ul><li><strong>Client Relationship Management:</strong> Develop and maintain strong relationships with clients to understand their financial needs, objectives, and risk tolerance.</li><li><strong>Conduct Financial Assessments:</strong> Analyze clients’ financial situations, including income, expenses, assets, and liabilities, to create comprehensive financial plans.</li><li><strong>Recommend Financial Solutions:</strong> Offer suitable financial products and services, such as investment options, retirement plans, insurance policies, and wealth management solutions, based on clients’ goals and risk profiles.</li><li><strong>Sales Presentations:</strong> Present financial products and services to clients, explaining their features, benefits, and potential returns in a clear and compelling manner.</li><li><strong>Achieve Sales Targets:</strong> Meet or exceed sales targets and revenue goals through effective lead generation, prospecting, and closing of deals.</li><li><strong>Provide Financial Education:</strong> Educate clients about financial concepts, investment strategies, and risk management to empower them in making informed decisions.</li><li><strong>Stay Updated on Financial Markets:</strong> Monitor financial markets, economic trends, and regulatory changes to ensure accurate and up-to-date advice to clients.</li><li><strong>Compliance and Documentation:</strong> Ensure compliance with industry regulations and maintain accurate records of client interactions and transactions.</li><li><strong>Collaborate with Team Members:</strong> Work collaboratively with other members of the financial services team, including financial advisors, portfolio managers, and support staff, to deliver exceptional client service.</li></ul>
+          <h4>Qualifications</h4><ul><li>Proven track record in sales, preferably in personal finance, financial planning, or wealth management.</li><li>Strong knowledge of financial products, investment vehicles, and market trends.</li><li>Excellent communication and interpersonal skills to build rapport with clients and team members.</li><li>Strong negotiation and closing skills, with the ability to handle objections effectively.</li><li>Familiarity with CRM software and sales tools to manage leads and customer data.</li><li>Ethical and customer-centric approach to sales, prioritizing clients’ best interests.</li><li>Ability to analyze complex financial data and present it in a clear and understandable manner.</li><li>Results-oriented and self-motivated with a passion for helping clients achieve their financial goals.</li></ul>
+          <a class="btn btn-primary" href="mailto:talentacquisition@finridge.net?subject=Application%20-%20Personal%20Finance%20Sales">Apply · talentacquisition@finridge.net</a>
+        </div>
+      </details>
+      <details class="job" data-reveal style="--rd:140ms">
+        <summary><div><h3>Team Leader – Credit Card Sales</h3><span class="job-loc">Dubai, UAE</span><p>We are seeking an experienced and results-driven Team Leader to lead our Credit Card Sales team.</p></div><span class="job-toggle">View Details</span></summary>
+        <div class="job-body">
+          <div class="job-sub">Team Leader · Credit Card Sales</div>
+          <h4>Job Description</h4><p>We are seeking an experienced and results-driven Team Leader to lead our Credit Card Sales team. As the Team Leader, you will be responsible for managing and motivating a team of credit card sales representatives to achieve sales targets and deliver exceptional customer service. Your leadership skills, industry expertise, and ability to foster a high-performance culture will be instrumental in driving the team’s success and contributing to the overall growth of our organization.</p>
+          <h4>Responsibilities</h4><ul><li><strong>Team Management:</strong> Provide leadership, guidance, and mentorship to the credit card sales team. Set clear performance expectations and regularly review individual and team performance.</li><li><strong>Sales Strategy and Planning:</strong> Develop and implement effective sales strategies and action plans to meet and exceed sales targets. Identify opportunities for growth and expansion in the credit card market.</li><li><strong>Performance Monitoring:</strong> Monitor team performance metrics, including sales targets, conversion rates, and customer satisfaction. Conduct regular performance evaluations and provide constructive feedback to team members.</li><li><strong>Training and Development:</strong> Conduct ongoing training sessions to equip team members with product knowledge, sales techniques, and industry best practices. Support their professional growth and skills enhancement.</li><li><strong>Sales Support:</strong> Assist team members in complex sales situations, handle customer escalations, and collaborate with other departments to ensure seamless sales operations.</li><li><strong>Lead Generation:</strong> Identify potential sales leads and business development opportunities. Collaborate with marketing and business development teams to drive lead generation activities.</li><li><strong>Reporting and Analysis:</strong> Prepare regular reports on team performance, sales activities, and market trends. Analyze data to identify areas for improvement and make informed strategic decisions.</li><li><strong>Compliance and Quality Assurance:</strong> Ensure team members adhere to company policies, sales procedures, and regulatory guidelines. Maintain high-quality standards in customer interactions and sales processes.</li><li><strong>Team Motivation and Recognition:</strong> Recognize and reward outstanding performance, fostering a positive and motivated team environment.</li></ul>
+          <h4>Qualifications</h4><ul><li>Proven track record in credit card sales or financial services.</li><li>Previous experience in team management, demonstrating leadership abilities.</li><li>In-depth knowledge of credit card products, industry trends, and sales strategies.</li><li>Strong analytical and problem-solving skills to address challenges and make data-driven decisions.</li><li>Excellent communication and interpersonal skills to effectively lead and engage team members.</li><li>Goal-oriented mindset with a passion for driving results and achieving sales targets.</li><li>Ability to handle pressure, adapt to changing environments, and maintain a positive attitude.</li><li>Proficiency in CRM software and sales tools for managing team performance and customer data.</li></ul>
+          <a class="btn btn-primary" href="mailto:talentacquisition@finridge.net?subject=Application%20-%20Team%20Leader%20-%20Credit%20Card%20Sales">Apply · talentacquisition@finridge.net</a>
+        </div>
+      </details>
+      <details class="job" data-reveal style="--rd:210ms">
+        <summary><div><h3>Team Leader – Personal Finance</h3><span class="job-loc">Dubai, UAE</span><p>We are seeking a highly skilled and dedicated Team Leader to lead our Personal Finance team.</p></div><span class="job-toggle">View Details</span></summary>
+        <div class="job-body">
+          <div class="job-sub">Team Leader · Personal Finance · Full Time Position</div>
+          <h4>Job Description</h4><p>We are seeking a highly skilled and dedicated Team Leader to lead our Personal Finance team. As the Team Leader, you will be responsible for managing a team of personal finance advisors and guiding them in providing comprehensive financial solutions to our clients. Your expertise in financial planning, leadership, and client relationship management will be essential in driving the team’s success and helping our clients achieve their financial goals.</p>
+          <h4>Responsibilities</h4><ul><li><strong>Team Management:</strong> Provide strong leadership and support to the personal finance advisors. Set clear performance goals, provide regular feedback, and conduct performance evaluations.</li><li><strong>Financial Planning Guidance:</strong> Offer guidance and expertise in financial planning to team members, ensuring they provide accurate and tailored financial advice to clients.</li><li><strong>Client Relationship Management:</strong> Oversee client interactions and complex financial planning cases. Handle customer escalations and ensure excellent service delivery.</li><li><strong>Sales Strategy and Growth:</strong> Develop and implement sales strategies to achieve team targets and business objectives. Identify opportunities for business growth and expansion.</li><li><strong>Training and Development:</strong> Conduct ongoing training sessions for team members to enhance their financial planning knowledge and sales skills.</li><li><strong>Compliance and Regulations:</strong> Ensure adherence to industry regulations, company policies, and ethical standards in all client interactions and financial recommendations.</li><li><strong>Market Analysis:</strong> Stay updated on market trends, economic conditions, and financial products to provide informed advice and strategic recommendations to clients.</li><li><strong>Reporting and Analysis:</strong> Prepare regular reports on team performance, sales activities, and client satisfaction. Analyze data to identify areas for improvement and make data-driven decisions.</li><li><strong>Team Motivation and Recognition:</strong> Motivate and recognize team members for their achievements, fostering a positive and high-performance team culture.</li></ul>
+          <h4>Qualifications</h4><ul><li>Proven experience in personal finance, financial planning, or wealth management.</li><li>Previous experience in team management, demonstrating strong leadership skills.</li><li>Excellent knowledge of financial planning concepts, investment strategies, and retirement planning.</li><li>Strong analytical skills to assess clients’ financial situations and provide suitable solutions.</li><li>Exceptional communication and interpersonal skills to build trust with clients and team members.</li><li>Goal-oriented mindset with a passion for achieving team targets and client satisfaction.</li><li>Proficiency in financial planning software and CRM systems for managing client data and interactions.</li></ul>
+          <a class="btn btn-primary" href="mailto:talentacquisition@finridge.net?subject=Application%20-%20Team%20Leader%20-%20Personal%20Finance">Apply · talentacquisition@finridge.net</a>
+        </div>
+      </details>
+      <details class="job" data-reveal style="--rd:280ms">
+        <summary><div><h3>Accounts and Admin Manager</h3><span class="job-loc">Dubai, UAE</span><p>We are looking for a highly organized and detail-oriented Accounts and Admin Manager to oversee the financial and administrative functions of our organization.</p></div><span class="job-toggle">View Details</span></summary>
+        <div class="job-body">
+          <div class="job-sub">Accounts and Admin Manager</div>
+          <h4>Job Description</h4><p>We are looking for a highly organized and detail-oriented Accounts and Admin Manager to oversee the financial and administrative functions of our organization. As the Accounts and Admin Manager, you will be responsible for managing accounting processes, financial reporting, and administrative operations. Your role will play a critical part in ensuring the smooth and efficient functioning of the company’s financial and administrative systems.</p>
+          <h4>Responsibilities</h4><ul><li><strong>Manage Accounting Operations:</strong> Oversee day-to-day accounting activities, including accounts payable, accounts receivable, general ledger entries, and bank reconciliations.</li><li><strong>Financial Reporting:</strong> Prepare accurate and timely financial reports, including profit and loss statements, balance sheets, and cash flow statements. Present financial data to senior management for decision-making purposes.</li><li><strong>Budgeting and Forecasting:</strong> Collaborate with department heads to develop and monitor budgets, track expenses, and provide financial forecasts.</li><li><strong>Auditing and Compliance:</strong> Ensure adherence to financial regulations and company policies. Coordinate with auditors during internal and external audits.</li><li><strong>Tax Compliance:</strong> Monitor tax compliance, prepare tax returns, and liaise with tax authorities when required.</li><li><strong>Financial Analysis:</strong> Conduct financial analysis to identify trends, cost-saving opportunities, and areas for improvement.</li><li><strong>Office Administration:</strong> Supervise administrative staff and oversee office operations, including maintenance, supplies, and equipment procurement.</li><li><strong>HR Coordination:</strong> Assist with HR-related tasks, such as onboarding new employees, managing leave records, and coordinating employee benefits.</li><li><strong>Vendor Management:</strong> Negotiate with vendors, review contracts, and ensure the timely processing of payments.</li><li><strong>Records Management:</strong> Maintain and organize financial and administrative records, both physical and digital.</li><li><strong>Compliance and Legal Requirements:</strong> Ensure compliance with legal and regulatory requirements related to administration and record-keeping.</li><li><strong>Process Improvement:</strong> Identify inefficiencies in administrative processes and implement improvements to enhance operational efficiency.</li></ul>
+          <h4>Qualifications</h4><ul><li>Bachelor’s degree in finance, accounting, business administration, or a related field.</li><li>Proven experience as an Accounts Manager, Finance Manager, or similar role.</li><li>Strong understanding of accounting principles, financial reporting, and budgeting.</li><li>Proficiency in accounting software and MS Office Suite (Excel, Word, PowerPoint).</li><li>Excellent organizational and time management skills.</li><li>Attention to detail and accuracy in financial reporting.</li><li>Strong analytical and problem-solving abilities.</li><li>Effective communication and interpersonal skills.</li><li>Leadership skills to manage a team and collaborate with various departments.</li><li>Familiarity with HR and administrative processes is a plus.</li></ul>
+          <a class="btn btn-primary" href="mailto:talentacquisition@finridge.net?subject=Application%20-%20Accounts%20and%20Admin%20Manager">Apply · talentacquisition@finridge.net</a>
+        </div>
+      </details>
+
+    </div>
+    <div class="section-head sub">
+      <span class="eyebrow" data-reveal>Culture</span>
+      <h2 data-reveal style="--rd:80ms">Life at FinRidge</h2>
+    </div>
+
+    <div class="feature-grid two">
+      <article class="card" data-reveal style="--rd:0ms">
+        <div class="card-icon"><svg class="ic" viewBox="0 0 24 24"><path d="M12 20s-7-4.4-7-10a4 4 0 0 1 7-2.6A4 4 0 0 1 19 10c0 5.600-7 10-7 10Z"/></svg></div>
+        <h3>Work-life balance</h3>
+        <p>Work-life balance is the delicate equilibrium between the demands of one’s professional life and personal well-being. In today’s fast-paced and competitive world, maintaining a healthy balance between work responsibilities and personal pursuits has become increasingly challenging. Achieving work-life balance is vital for overall well-being, mental health, and productivity, ensuring individuals can lead fulfilling and enriched lives.</p>
+      </article>
+      <article class="card" data-reveal style="--rd:90ms">
+        <div class="card-icon"><svg class="ic" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M2 12h20"/><path d="M12 2a15 15 0 0 1 0 20 15 15 0 0 1 0-20Z"/></svg></div>
+        <h3>Diversity and inclusion</h3>
+        <p>Diversity and inclusion are essential principles that promote equality, respect, and acceptance of all individuals, regardless of their backgrounds, identities, or abilities. Embracing diversity means acknowledging and celebrating the unique perspectives and experiences that each person brings to the table. Inclusion, on the other hand, involves creating an environment where everyone feels valued, heard, and empowered to participate fully. Together, diversity and inclusion form the foundation of a thriving and harmonious workplace, community, and society at large.</p>
+      </article>
+      <article class="card" data-reveal style="--rd:180ms">
+        <div class="card-icon"><svg class="ic" viewBox="0 0 24 24"><path d="M13 2 3 14h9l-1 8 10-12h-9l1-8Z"/></svg></div>
+        <h3>Work hard, play hard</h3>
+        <p>“Work hard, play hard” is a popular adage that encapsulates the idea of maintaining a healthy balance between diligent efforts in professional life and the pursuit of enjoyment and relaxation in personal life. It emphasizes the importance of dedication and productivity in work, coupled with the need to unwind and engage in leisure activities to recharge and find fulfillment.</p>
+      </article>
+      <article class="card" data-reveal style="--rd:270ms">
+        <div class="card-icon"><svg class="ic" viewBox="0 0 24 24"><path d="m12 3 2.7 5.6 6.1.8-4.5 4.3 1.1 6.1L12 16.9 6.6 19.8l1.1-6.1L3.2 9.4l6.1-.8L12 3Z"/></svg></div>
+        <h3>Make an impact</h3>
+        <p>Making an impact goes beyond personal achievements; it centers on leaving a positive mark on the lives of others and the environment. It involves empathy, compassion, and a sense of responsibility toward creating a world that is fair, just, and sustainable for future generations. Individuals who strive to make an impact recognize the interconnectedness of all beings and the shared responsibility to foster progress and well-being.</p>
+      </article>
+
+    </div>
+  </section>
+
+  <!-- CONTACT + FOOTER -->
   <section class="section cta" id="contact">
-    <div class="cta-card">
-      <span class="eyebrow" data-reveal style="--rd:60ms">Contact us</span>
-      <h2 data-reveal style="--rd:140ms">Connect with us for further details</h2>
-      <p data-reveal style="--rd:220ms">Office 310, Business Venue Building, Umm Hurair Road, Oud Metha, Dubai, UAE · P.O Box 45592<br><a href="mailto:info@finridge.net">info@finridge.net</a> · <a href="tel:+97147034555">+971 4703 4555</a></p>
-      <div class="hero-actions" data-reveal style="--rd:300ms">
-        <a class="btn btn-primary" href="https://finridge.net/index.php/contact-us/" target="_blank" rel="noopener">Get A Quote
-          <svg class="ic arrow" viewBox="0 0 24 24"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></a>
-        <a class="btn btn-outline" href="tel:+97147034555">Call Us</a>
+    <div class="section-head">
+      <span class="eyebrow" data-reveal>Contact Us</span>
+      <h2 data-reveal style="--rd:80ms">Connect with us for further details</h2>
+    </div>
+
+    <div class="contact-grid">
+      <form class="cta-card contact-form" id="quote-form" data-reveal>
+        <label>Select *
+          <select name="product" required>
+            <option>Credit card</option>
+            <option>Personal Loan</option>
+          </select>
+        </label>
+        <div class="row">
+          <label>First name *<input name="first" required autocomplete="given-name"></label>
+          <label>Last name *<input name="last" required autocomplete="family-name"></label>
+        </div>
+        <label>What is your fixed monthly income? * <small>In Dirham.</small><input name="income" type="number" min="0" inputmode="numeric" required></label>
+        <div class="row">
+          <label>Phone Number *<input name="phone" type="tel" required autocomplete="tel"></label>
+          <label>Email *<input name="email" type="email" required autocomplete="email"></label>
+        </div>
+        <button class="btn btn-primary" type="submit">Submit <svg class="ic arrow" viewBox="0 0 24 24"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></button>
+        <small class="form-note">Submitting opens your email app with these details addressed to info@finridge.net.</small>
+      </form>
+      <div class="office" data-reveal style="--rd:120ms">
+        <div class="cta-card office-card">
+          <span class="eyebrow">UAE Head Office</span>
+          <p><strong>Phone:</strong> <a href="tel:+97147034555">+971 4703 4555</a></p>
+          <p><strong>Email:</strong> <a href="mailto:info@finridge.net">info@finridge.net</a></p>
+          <p><strong>Address:</strong> Office 310, Business Venue Building, Umm Hurair Road, Oud Metha, Dubai, UAE</p>
+          <p>P.O Box 45592</p>
+          <a class="btn btn-outline" href="mailto:info@finridge.net?subject=Appointment%20request">Get Appointment</a>
+        </div>
+        <iframe class="map" title="Finridge office location" loading="lazy" referrerpolicy="no-referrer-when-downgrade"
+          src="https://maps.google.com/maps?q=Umm%20hurair%20road%2C%20office%20310%2C%20business%20venue%20building%2C%20oud%20mehta%2C%20dubai%2C%20AE&t=m&z=17&output=embed&iwloc=near"></iframe>
       </div>
     </div>
     <footer class="footer">
       <div class="footer-brand">
-        <a class="brand" href="#top"><span class="brand-mark">▲</span>Finridge</a>
+        <a class="brand-logo" href="#top"><img src="assets/logo.jpeg" alt="FinRidge — Unlock Your Financial Potential" width="699" height="209"></a>
+        <h4 class="footer-name">Finridge Commercial Brokers LLC</h4>
         <p>As an autonomous service provider, we specialize in delivering comprehensive retail finance solutions and services to both Islamic and conventional banks and financial institutions throughout the UAE.</p>
       </div>
       <div class="footer-cols">
+        <div class="footer-col"><h4>Quick links</h4><a href="#top">Home</a><a href="#services">Services</a><a href="#career">Career</a><a href="#about">About</a><a href="#contact">Contact Us</a></div>
         <div class="footer-col"><h4>Services</h4><a href="#services">Credit Cards</a><a href="#services">Personal Finance</a></div>
-        <div class="footer-col"><h4>Company</h4><a href="#about">About</a><a href="https://finridge.net/index.php/car/" target="_blank" rel="noopener">Career</a><a href="https://www.linkedin.com/company/finridge-commercial-brokers-llc/" target="_blank" rel="noopener">LinkedIn</a></div>
-        <div class="footer-col"><h4>Contact</h4><a href="mailto:info@finridge.net">info@finridge.net</a><a href="tel:+97147034555">+971 4703 4555</a><a href="#contact">Dubai, UAE</a></div>
+        <div class="footer-col"><h4>Connect</h4><a href="https://www.linkedin.com/company/finridge-commercial-brokers-llc/" target="_blank" rel="noopener">LinkedIn</a><a href="mailto:info@finridge.net">info@finridge.net</a><a href="tel:+97147034555">+971 4703 4555</a></div>
       </div>
     </footer>
-    <p class="copyright">© <span id="year"></span> Finridge Commercial Brokers LLC. All rights reserved.</p>
+    <p class="copyright">© <span id="year"></span> FinRidge, All Rights Reserved.</p>
   </section>
 </div>
 
@@ -327,6 +567,24 @@ svg.ic.arrow{stroke-width:2}
     });
   }, { threshold:0.18, rootMargin:'0px 0px -8% 0px' });
   els.forEach(function(el){ io.observe(el); });
+})();
+</script>
+
+<script>
+(function(){
+  var form = document.getElementById('quote-form');
+  if (!form) return;
+  document.querySelectorAll('[data-product]').forEach(function(a){
+    a.addEventListener('click', function(){ form.elements.product.value = a.getAttribute('data-product'); });
+  });
+  form.addEventListener('submit', function(e){
+    e.preventDefault();
+    var f = form.elements;
+    var body = 'Product: ' + f.product.value + '\nName: ' + f.first.value + ' ' + f.last.value +
+      '\nFixed monthly income (AED): ' + f.income.value + '\nPhone: ' + f.phone.value + '\nEmail: ' + f.email.value;
+    location.href = 'mailto:info@finridge.net?subject=' + encodeURIComponent('Enquiry - ' + f.product.value) +
+      '&body=' + encodeURIComponent(body);
+  });
 })();
 </script>
 
